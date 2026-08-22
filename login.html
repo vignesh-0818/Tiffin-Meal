@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SparklePro — Cleaning Services</title>
+  <meta name="description" content="Sign in to your SparklePro account to manage bookings, invoices and cleaning plans. Premium home & commercial cleaning services.">
+  <meta name="keywords" content="home cleaning, professional cleaners, deep cleaning, office cleaning, SparklePro">
+  <meta name="author" content="SparklePro">
+  <link rel="canonical" href="https://www.sparklepro.com/login.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SparklePro">
+  <meta property="og:title" content="Login | SparklePro">
+  <meta property="og:description" content="Sign in to your SparklePro account to manage bookings, invoices and cleaning plans.">
+  <meta property="og:image" content="https://www.sparklepro.com/assets/images/logo/logo-main.webp">
+  <meta property="og:url" content="https://www.sparklepro.com/login.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Login | SparklePro">
+  <meta name="twitter:description" content="Sign in to your SparklePro account to manage bookings, invoices and cleaning plans.">
+  <meta name="twitter:image" content="https://www.sparklepro.com/assets/images/logo/logo-main.webp">
+  <link rel="icon" type="image/webp" href="assets/images/logo/logo-main.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="auth-page-body">
+
+  <div class="auth-page">
+    <aside class="auth-side">
+      <div class="anim-bg" aria-hidden="true">
+        <span class="ab-orb ab-orb-1"></span>
+        <span class="ab-orb ab-orb-2"></span>
+        <span class="ab-orb ab-orb-4"></span>
+        <span class="ab-spark" style="--x:12%; --d:10s; --del:0s; --s:8px;"></span>
+        <span class="ab-spark sky" style="--x:38%; --d:13s; --del:3s; --s:6px;"></span>
+        <span class="ab-spark" style="--x:64%; --d:11s; --del:6s; --s:7px;"></span>
+        <span class="ab-spark sky" style="--x:86%; --d:12s; --del:1.5s; --s:8px;"></span>
+      </div>
+      <a class="auth-brand" href="index.html">
+        <span class="brand-logo"><img src="assets/images/logo/logo-main.webp" alt="SparklePro logo" width="52" height="52"></span>
+        <span>SparklePro</span>
+      </a>
+
+      <i class="bi bi-sparkles" style="position:absolute; top:14%; left:10%; font-size:2.2rem; opacity:.3; z-index:2;"></i>
+      <i class="bi bi-house-heart" style="position:absolute; top:22%; right:9%; font-size:2.6rem; opacity:.25; z-index:2;"></i>
+      <i class="bi bi-droplet-half" style="position:absolute; bottom:34%; left:14%; font-size:1.8rem; opacity:.35; z-index:2;"></i>
+      <i class="bi bi-stars" style="position:absolute; bottom:28%; right:12%; font-size:2rem; opacity:.3; z-index:2;"></i>
+
+      <blockquote class="auth-quote" style="margin:0;">
+        "SparklePro turned our home around — every corner feels brand new. Booking, reminders and the same friendly cleaner every time."
+        <small>— Sarah Mitchell, Residential Client</small>
+      </blockquote>
+
+      <div class="auth-stats">
+        <div class="stat">18k+<span>Homes Cleaned</span></div>
+        <div class="stat">150+<span>Vetted Cleaners</span></div>
+        <div class="stat">4.9<span>Avg Rating</span></div>
+      </div>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="auth-card-head">
+          <h2>Welcome Back</h2>
+          <p class="text-muted-2 mb-0">Sign in to manage your bookings, invoices and cleaning schedule.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" autocomplete="email" required>
+            <label for="loginEmail">Email address</label>
+          </div>
+
+          <div class="form-floating mb-4 position-relative">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" autocomplete="current-password" style="padding-right:3rem;" required>
+            <label for="loginPassword">Password</label>
+            <button type="button" class="btn btn-link p-0 position-absolute top-50 end-0 translate-middle-y me-3 text-muted" onclick="var i=document.getElementById('loginPassword');var ic=this.querySelector('i');if(i.type==='password'){i.type='text';ic.classList.replace('bi-eye','bi-eye-slash');}else{i.type='password';ic.classList.replace('bi-eye-slash','bi-eye');}" aria-label="Show password"><i class="bi bi-eye"></i></button>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rememberMe">
+              <label class="form-check-label small" for="rememberMe">Remember me</label>
+            </div>
+            <a href="forgot-password.html" class="small fw-semibold">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-100" data-loading="Signing in…"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</button>
+        </form>
+
+        <div class="auth-social">
+          <a href="#" class="btn"><i class="bi bi-google me-2"></i>Google</a>
+          <a href="#" class="btn"><i class="bi bi-apple me-2"></i>Apple</a>
+        </div>
+
+        <div class="auth-divider">or continue with email</div>
+
+        <p class="text-center mb-0">Don't have an account? <a href="register.html" class="fw-semibold">Create one</a></p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/purecounterjs@1.2.1/dist/purecounter_vanilla.js" defer></script>
+  <script src="assets/js/darkmode.js" defer></script>
+  <script src="assets/js/rtl.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

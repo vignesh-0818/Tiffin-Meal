@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - Subscription Plans</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navbar -->
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html"><i class="fas fa-utensils"></i> TiffinBox</a>
+<button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family:'Playfair Display', serif; color:var(--primary); font-weight:700; font-size:1.6rem;"><i class="fas fa-utensils"></i> TiffinBox</h5>
+<button aria-label="Close" class="btn-close" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+<li class="nav-item dropdown home-dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="index.html">Home 1</a></li>
+<li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+<li class="nav-item"><a class="nav-link" href="menu.html">Sample Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
+<button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<a class="btn nav-login-btn" href="customer-login.html">Login</a>
+<a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-inner" style="background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1920&amp;h=800&amp;fit=crop');">
+<div class="container">
+<div class="row justify-content-center text-center">
+<div class="col-lg-8">
+<h1 class="display-4 fw-bold mb-3">Choose Your Perfect Plan</h1>
+
+</div>
+</div>
+</div>
+</section>
+<!-- Plans Grid -->
+<section class="py-5">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title">Subscription Plans</h2>
+<p class="text-muted">Select a plan that fits your lifestyle</p>
+</div>
+</div>
+<div class="row g-4">
+<!-- Vegetarian Plan -->
+<div class="col-lg-3 col-md-6">
+<div class="plan-card h-100 text-center p-4 rounded-4 shadow-sm">
+<div class="plan-icon mb-3">
+<i class="fas fa-leaf fa-3x text-success"></i>
+</div>
+<h4 class="fw-bold">Vegetarian Plan</h4>
+<div class="plan-price my-3">
+<span class="currency">₹</span><span class="amount">1,499</span>
+<span class="period">/month</span>
+</div>
+<ul class="list-unstyled text-start mb-4">
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-success me-2"></i>Daily vegetarian meals
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-success me-2"></i>North Indian &amp; South Indian options
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-success me-2"></i>Customizable spice level
+                        </li>
+<li class="py-2">
+<i class="fas fa-check text-success me-2"></i>Free delivery
+                        </li>
+</ul>
+<a class="btn btn-outline-primary w-100" href="contact.html">Choose Plan</a>
+</div>
+</div>
+<!-- Non-Vegetarian Plan -->
+<div class="col-lg-3 col-md-6">
+<div class="plan-card featured h-100 text-center p-4 rounded-4 shadow position-relative">
+<span class="badge bg-primary position-absolute top-0 start-50 translate-middle px-3 py-2">Popular</span>
+<div class="plan-icon mb-3 mt-2">
+<i class="fas fa-drumstick-bite fa-3x text-primary"></i>
+</div>
+<h4 class="fw-bold">Non-Vegetarian Plan</h4>
+<div class="plan-price my-3">
+<span class="currency">₹</span><span class="amount">1,999</span>
+<span class="period">/month</span>
+</div>
+<ul class="list-unstyled text-start mb-4">
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-primary me-2"></i>All vegetarian options
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-primary me-2"></i>Chicken, fish, egg dishes
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-primary me-2"></i>Premium protein meals
+                        </li>
+<li class="py-2">
+<i class="fas fa-check text-primary me-2"></i>Free delivery
+                        </li>
+</ul>
+<a class="btn btn-primary w-100" href="contact.html">Choose Plan</a>
+</div>
+</div>
+<!-- Diet Plan -->
+<div class="col-lg-3 col-md-6">
+<div class="plan-card h-100 text-center p-4 rounded-4 shadow-sm">
+<div class="plan-icon mb-3">
+<i class="fas fa-heart-pulse fa-3x text-danger"></i>
+</div>
+<h4 class="fw-bold">Diet Plan</h4>
+<div class="plan-price my-3">
+<span class="currency">₹</span><span class="amount">1,299</span>
+<span class="period">/month</span>
+</div>
+<ul class="list-unstyled text-start mb-4">
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-danger me-2"></i>Low-calorie meals
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-danger me-2"></i>High-protein options
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-danger me-2"></i>Portion-controlled
+                        </li>
+<li class="py-2">
+<i class="fas fa-check text-danger me-2"></i>Nutritionist recommended
+                        </li>
+</ul>
+<a class="btn btn-outline-danger w-100" href="contact.html">Choose Plan</a>
+</div>
+</div>
+<!-- Combo Plan -->
+<div class="col-lg-3 col-md-6">
+<div class="plan-card h-100 text-center p-4 rounded-4 shadow-sm">
+<div class="plan-icon mb-3">
+<i class="fas fa-utensils fa-3x text-warning"></i>
+</div>
+<h4 class="fw-bold">Combo Plan</h4>
+<div class="plan-price my-3">
+<span class="currency">₹</span><span class="amount">2,499</span>
+<span class="period">/month</span>
+</div>
+<ul class="list-unstyled text-start mb-4">
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-warning me-2"></i>Veg + Non-Veg combo
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-warning me-2"></i>Premium thali options
+                        </li>
+<li class="py-2 border-bottom">
+<i class="fas fa-check text-warning me-2"></i>Weekend special meals
+                        </li>
+<li class="py-2">
+<i class="fas fa-check text-warning me-2"></i>Priority delivery
+                        </li>
+</ul>
+<a class="btn btn-outline-warning w-100" href="contact.html">Choose Plan</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Plan Comparison Table -->
+<section class="py-5 bg-light">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title">Compare Plans</h2>
+<p class="text-muted">See what's included in each subscription</p>
+</div>
+</div>
+<div class="table-responsive">
+<table class="table dashboard-table bg-white rounded-4 shadow-sm overflow-hidden">
+<thead>
+<tr>
+<th>Feature</th>
+<th class="text-center">Vegetarian</th>
+<th class="text-center">Non-Vegetarian</th>
+<th class="text-center">Diet</th>
+<th class="text-center">Combo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="fw-semibold">Meal Type</td>
+<td class="text-center">Veg Only</td>
+<td class="text-center">Veg + Non-Veg</td>
+<td class="text-center">Low-Cal Veg</td>
+<td class="text-center">Veg + Non-Veg Premium</td>
+</tr>
+<tr>
+<td class="fw-semibold">Daily Meals</td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+</tr>
+<tr>
+<td class="fw-semibold">Cuisine Options</td>
+<td class="text-center">North &amp; South Indian</td>
+<td class="text-center">Multi-Cuisine</td>
+<td class="text-center">Health-Focused</td>
+<td class="text-center">Premium Multi-Cuisine</td>
+</tr>
+<tr>
+<td class="fw-semibold">Spice Customization</td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+</tr>
+<tr>
+<td class="fw-semibold">Nutrition Tracking</td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+</tr>
+<tr>
+<td class="fw-semibold">Free Delivery</td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+</tr>
+<tr>
+<td class="fw-semibold">Priority Support</td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+</tr>
+<tr>
+<td class="fw-semibold">Weekend Specials</td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-xmark text-danger"></i></td>
+<td class="text-center"><i class="fas fa-check text-success"></i></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-5">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="text-muted">Everything you need to know about our plans</p>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="accordion" id="plansFAQ">
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" data-bs-target="#faq1" data-bs-toggle="collapse" type="button">
+                                What's included in my daily meal subscription?
+                            </button>
+</h2>
+<div class="accordion-collapse collapse show" data-bs-parent="#plansFAQ" id="faq1">
+<div class="accordion-body">
+                                Each daily meal includes a balanced combination of roti/rice, sabzi, dal, salad, and a dessert on select days. The exact menu rotates weekly to keep things fresh and exciting. All meals are freshly prepared and delivered to your doorstep.
+                            </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-target="#faq2" data-bs-toggle="collapse" type="button">
+                                Can I change my plan after subscribing?
+                            </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plansFAQ" id="faq2">
+<div class="accordion-body">
+                                Yes, you can upgrade or downgrade your plan at any time. Changes will take effect from the next billing cycle. If you upgrade mid-month, you'll only be charged the prorated difference. Contact our support team to make any changes.
+                            </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-target="#faq3" data-bs-toggle="collapse" type="button">
+                                What is the cancellation policy?
+                            </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plansFAQ" id="faq3">
+<div class="accordion-body">
+                                You can cancel your subscription anytime with a 7-day notice. There are no cancellation fees. If you cancel mid-cycle, you'll continue to receive meals until the end of your current billing period. Refunds are processed within 5-7 business days.
+                            </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-target="#faq4" data-bs-toggle="collapse" type="button">
+                                What are the delivery schedules?
+                            </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plansFAQ" id="faq4">
+<div class="accordion-body">
+                                We deliver meals twice daily — lunch between 12:00 PM and 1:30 PM and dinner between 7:00 PM and 8:30 PM. Combo plan subscribers enjoy priority delivery with earlier time slots. You can set your preferred delivery window in the customer dashboard.
+                            </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-target="#faq5" data-bs-toggle="collapse" type="button">
+                                Can I accommodate dietary restrictions?
+                            </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plansFAQ" id="faq5">
+<div class="accordion-body">
+                                Absolutely. During registration, you can specify allergies and dietary preferences such as no onions, no garlic, gluten-free, or Jain options. Our kitchen is equipped to handle a wide range of dietary needs. Our nutritionist can also help customize your meals.
+                            </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-target="#faq6" data-bs-toggle="collapse" type="button">
+                                What payment options are available?
+                            </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plansFAQ" id="faq6">
+<div class="accordion-body">
+                                We accept all major credit/debit cards, UPI (Google Pay, PhonePe, Paytm), net banking, and wallet payments. Monthly auto-renewal is available for hassle-free payments. You can also opt for quarterly or annual plans for additional savings.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+<div class="container">
+<div class="row justify-content-center text-center">
+<div class="col-lg-8">
+<h2 class="display-6 fw-bold mb-3">Need Help Choosing?</h2>
+<p class="lead mb-4">Our team is happy to help you find the perfect plan for your needs. Get in touch with us today.</p>
+<a class="btn btn-light btn-lg px-5" href="contact.html">
+<i class="fas fa-phone me-2"></i>Contact Us
+                </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-5 bg-dark text-white">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6 mb-4 mb-lg-0">
+<h4 class="fw-bold mb-2">Subscribe to Our Newsletter</h4>
+<p class="text-white-50 mb-0">Get weekly updates on menus, offers, and healthy eating tips.</p>
+</div>
+<div class="col-lg-6">
+<form class="d-flex gap-2">
+<input class="form-control form-control-lg" placeholder="Enter your email address" type="email"/>
+<button class="btn btn-primary btn-lg px-4" type="submit">
+<i class="fas fa-paper-plane"></i>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4">
+<h5><i class="fas fa-utensils"></i> TiffinBox</h5>
+<p>Delivering fresh, home-cooked meals to your doorstep. Authentic Indian cuisine made with love and the finest ingredients.</p>
+<div class="footer-social">
+<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 mb-4">
+<h5>Quick Links</h5>
+<ul class="footer-links">
+<li><a href="about.html">About Us</a></li>
+<li><a href="menu.html">Sample Menu</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="plans.html">Plans</a></li>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Contact</h5>
+<ul class="footer-links">
+<li><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Delhi, India</li>
+<li><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+<li><i class="fas fa-envelope me-2"></i> hello@tiffinbox.com</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Newsletter</h5>
+<p>Subscribe for weekly menus and exclusive offers!</p>
+<form class="d-flex" onsubmit="handleNewsletter(event)">
+<input class="form-control" placeholder="Your email" required="" style="border-radius:25px 0 0 25px;" type="email"/>
+<button class="btn btn-primary" style="border-radius:0 25px 25px 0;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span class="current-year"></span> TiffinBox. All rights reserved. <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Service</a></p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

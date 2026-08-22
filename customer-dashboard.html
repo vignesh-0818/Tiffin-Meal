@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - Customer Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="dashboard-wrapper">
+<!-- Sidebar -->
+<aside class="dashboard-sidebar">
+<div class="sidebar-header">
+<a class="brand" href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+<i class="fas fa-utensils"></i>
+<span style="font-family:'Playfair Display', serif; font-weight:700; font-size:1.3rem; color:var(--primary);">TiffinBox</span>
+</a>
+</div>
+<ul class="sidebar-nav flex-grow-1" style="overflow-y: auto;">
+<li class="sidebar-category">Menu</li>
+<li><a class="nav-link active" data-section="overview" href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+<li><a class="nav-link" data-section="weekly-menu" href="#"><i class="fas fa-calendar-alt"></i> Upcoming Meals</a></li>
+<li><a class="nav-link" data-section="subscription" href="#"><i class="fas fa-box"></i> My Plans</a></li>
+<li><a class="nav-link" data-section="preferences" href="#"><i class="fas fa-heart"></i> Meal Preferences</a></li>
+<li><a class="nav-link" data-section="billing" href="#"><i class="fas fa-file-invoice"></i> Orders / Billing</a></li>
+<li><a class="nav-link" data-section="profile" href="#"><i class="fas fa-user-cog"></i> Profile</a></li>
+</ul>
+<div style="padding: 1rem; border-top: 1px solid var(--border-color); margin-top:auto;">
+<div class="sidebar-profile" style="display:flex; align-items:center; gap:0.75rem; padding-bottom:1rem;">
+<img alt="Customer" class="profile-avatar" id="sidebar-profile-img" src="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"/>
+<div class="profile-info">
+<h6 class="name m-0 fw-bold" id="sidebar-profile-name" style="font-size:0.9rem;">Customer</h6>
+<span class="role text-secondary" id="sidebar-profile-role" style="font-size:0.75rem;">Customer</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="dashboard-main">
+<!-- Top Bar -->
+<div class="dashboard-topbar">
+<div class="admin-topbar w-100">
+<div class="admin-topbar-left">
+<button class="sidebar-toggle btn btn-link text-dark d-lg-none p-0 me-3">
+<i class="fas fa-bars"></i>
+</button>
+<h4 class="topbar-title m-0 d-none d-md-block" style="font-weight: 700;">Dashboard Overview</h4>
+</div>
+<div class="admin-topbar-right">
+<a class="btn btn-outline-primary btn-sm me-2 fw-semibold" href="index.html" style="border-radius: 20px;">
+<i class="fas fa-arrow-left"></i> Back to Website
+</a>
+<button class="theme-toggle btn btn-outline-primary btn-sm fw-semibold d-inline-flex align-items-center justify-content-center" onclick="toggleTheme()" style="width: 40px; height: 40px; border-radius: 50%;" title="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+</button>
+<button class="rtl-toggle btn btn-outline-primary btn-sm fw-semibold d-inline-flex align-items-center justify-content-center ms-2" onclick="toggleRTL()" style="width: 40px; height: 40px; border-radius: 50%;" title="Toggle RTL">
+    <i class="fas fa-language"></i>
+</button>
+<button class="btn btn-primary btn-sm fw-semibold d-inline-flex align-items-center justify-content-center px-3 ms-2" onclick="logout()" style="height: 40px; border-radius: 20px;">
+    <i class="fas fa-sign-out-alt me-2"></i> Logout
+</button>
+<div class="profile-dropdown ms-3">
+<div class="profile-trigger">
+<img alt="Profile" class="admin-top-avatar" id="topbar-profile-img" src=""/>
+<span class="name fw-bold admin-top-name" id="topbar-profile-name">Customer</span>
+<i class="fas fa-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+</div>
+<div class="dropdown-menu admin-dropdown">
+<a class="dropdown-item" href="#" onclick="document.querySelector('[data-section=\'overview\']').click()"><i class="fas fa-home"></i> Dashboard</a>
+<a class="dropdown-item" href="#" onclick="document.querySelector('[data-section=\'profile\']').click()"><i class="fas fa-user"></i> Profile</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="index.html"><i class="fas fa-globe"></i> Public Website</a>
+<a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Content -->
+<div class="dashboard-content">
+<!-- Overview Section -->
+<section id="section-overview" style="display: block;">
+<div class="welcome-banner">
+<h2>Welcome back, Customer!</h2>
+<p>Here's what's happening with your meals today</p>
+</div>
+<div class="stats-grid">
+<div class="stat-card" id="current-plan">
+<div class="stat-icon green">
+<i class="fas fa-box"></i>
+</div>
+<div class="stat-info">
+<span class="stat-label">Current Plan</span>
+<span class="stat-value">--</span>
+</div>
+</div>
+<div class="stat-card" id="subscription-status">
+<div class="stat-icon blue">
+<i class="fas fa-check-circle"></i>
+</div>
+<div class="stat-info">
+<span class="stat-label">Subscription Status</span>
+<span class="stat-value">--</span>
+</div>
+</div>
+<div class="stat-card" id="next-delivery">
+<div class="stat-icon orange">
+<i class="fas fa-truck"></i>
+</div>
+<div class="stat-info">
+<span class="stat-label">Next Delivery</span>
+<span class="stat-value">--</span>
+</div>
+</div>
+<div class="stat-card" id="todays-meal">
+<div class="stat-icon red">
+<i class="fas fa-utensils"></i>
+</div>
+<div class="stat-info">
+<span class="stat-label">Today's Meal</span>
+<span class="stat-value">--</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Weekly Menu Section -->
+<section class="dashboard-section fade-in" id="section-weekly-menu" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Upcoming Meals</h5>
+</div>
+<div class="p-4 text-center text-muted">
+<i class="fas fa-calendar-alt fa-3x mb-3 text-secondary opacity-50"></i>
+<h6>No upcoming meals scheduled</h6>
+<p>You haven't selected your meals for next week yet.</p>
+<button class="btn btn-primary mt-2" onclick="window.location.href='menu.html'">Select Meals</button>
+</div>
+</div>
+</section>
+
+<!-- Subscription Section -->
+<section class="dashboard-section fade-in" id="section-subscription" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">My Plans</h5>
+</div>
+<div class="p-4 text-center text-muted" id="subscription-details">
+<i class="fas fa-box fa-3x mb-3 text-secondary opacity-50"></i>
+<h6>Active Subscription Details</h6>
+<p>Manage your active meal plan and billing cycle.</p>
+<button class="btn btn-outline-primary mt-2">Upgrade Plan</button>
+</div>
+</div>
+</section>
+
+<!-- Meal Preferences Section -->
+<section class="dashboard-section fade-in" id="section-preferences" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Meal Preferences</h5>
+</div>
+<div class="p-4">
+<form id="preferences-form" onsubmit="savePreferences(event)">
+<div class="mb-3">
+<label class="form-label">Dietary Requirement</label>
+<select class="form-select" name="dietary">
+<option value="Vegetarian">Vegetarian</option>
+<option value="Non-Vegetarian">Non-Vegetarian</option>
+<option value="Vegan">Vegan</option>
+</select>
+</div>
+<div class="mb-3">
+<label class="form-label">Allergies (if any)</label>
+<input class="form-control" name="allergies" placeholder="e.g. Peanuts, Dairy" type="text"/>
+</div>
+<button class="btn btn-primary" type="submit">Save Preferences</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Billing Section -->
+<section class="dashboard-section fade-in" id="section-billing" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Orders &amp; Billing</h5>
+</div>
+<div class="table-responsive p-3">
+<table class="table">
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Date</th>
+<th>Items</th>
+<th>Subtotal</th>
+<th>Delivery</th>
+<th>Total</th>
+<th>Payment / Status</th>
+</tr>
+</thead>
+<tbody id="order-history-body"></tbody>
+</table>
+</div>
+<div class="table-responsive px-3 pb-3">
+<h6 class="mb-3">Billing History</h6>
+<table class="table">
+<thead><tr><th>Invoice ID</th><th>Order ID</th><th>Date</th><th>Items</th><th>Amount</th><th>Payment / Status</th></tr></thead>
+<tbody id="billing-history-body"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- Profile Section -->
+<section class="dashboard-section fade-in" id="section-profile" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">My Profile</h5>
+</div>
+<div class="p-4 text-center">
+<img class="profile-image mb-3" src="" style="width:100px;height:100px;border-radius:50%;object-fit:cover;"/>
+<h4 class="profile-name">Customer Name</h4>
+<p class="profile-email text-muted mb-1">customer@email.com</p>
+<p class="profile-phone text-muted">Phone Number</p>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

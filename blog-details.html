@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - Blog Details</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navbar -->
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html"><i class="fas fa-utensils"></i> TiffinBox</a>
+<button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family:'Playfair Display', serif; color:var(--primary); font-weight:700; font-size:1.6rem;"><i class="fas fa-utensils"></i> TiffinBox</h5>
+<button aria-label="Close" class="btn-close" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+<li class="nav-item dropdown home-dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="index.html">Home 1</a></li>
+<li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+<li class="nav-item"><a class="nav-link" href="menu.html">Sample Menu</a></li>
+<li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
+<button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<a class="btn nav-login-btn" href="customer-login.html">Login</a>
+<a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu -->
+<!-- Hero -->
+<section class="hero-inner" style="background: url('assets/images/blog/blog-details-hero.jpg') center/cover no-repeat;">
+<div class="hero-overlay"></div>
+<div class="container position-relative text-center text-white" style="z-index: 2;">
+<h1 class="display-4 fw-bold" style="color:#FFFFFF; text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);">Blog Details</h1>
+<p class="lead mt-3" style="color:#FFFFFF; text-shadow: 1px 1px 5px rgba(0,0,0,0.8);">Read the full article</p>
+</div>
+</section>
+<!-- Article Content -->
+<section class="py-5">
+<div class="container">
+<div class="blog-detail-content mx-auto" id="article-container" style="max-width:800px;">
+<!-- Filled by JS -->
+</div>
+<!-- Related Articles -->
+<div class="mx-auto mt-5" id="related-container" style="max-width:1000px;">
+<h3 class="fw-bold text-center mb-4">Related Articles</h3>
+<div class="row g-4" id="related-grid">
+<!-- Filled by JS -->
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-5 bg-primary text-white">
+<div class="container text-center">
+<h3 class="fw-bold mb-3">Subscribe to Our Newsletter</h3>
+<p class="mb-4">Get the latest recipes, health tips, and exclusive offers delivered to your inbox.</p>
+<div class="row justify-content-center">
+<div class="col-md-5">
+<div class="input-group">
+<input class="form-control" placeholder="Enter your email" type="email"/>
+<button class="btn btn-light text-primary fw-semibold" type="button">Subscribe</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4">
+<h5><i class="fas fa-utensils"></i> TiffinBox</h5>
+<p>Delivering fresh, home-cooked meals to your doorstep. Authentic Indian cuisine made with love and the finest ingredients.</p>
+<div class="footer-social">
+<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 mb-4">
+<h5>Quick Links</h5>
+<ul class="footer-links">
+<li><a href="about.html">About Us</a></li>
+<li><a href="menu.html">Sample Menu</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="plans.html">Plans</a></li>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Contact</h5>
+<ul class="footer-links">
+<li><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Delhi, India</li>
+<li><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+<li><i class="fas fa-envelope me-2"></i> hello@tiffinbox.com</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Newsletter</h5>
+<p>Subscribe for weekly menus and exclusive offers!</p>
+<form class="d-flex" onsubmit="handleNewsletter(event)">
+<input class="form-control" placeholder="Your email" required="" style="border-radius:25px 0 0 25px;" type="email"/>
+<button class="btn btn-primary" style="border-radius:0 25px 25px 0;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span class="current-year"></span> TiffinBox. All rights reserved. <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Service</a></p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/blog-data.js"></script>
+<script>
+function renderArticle(id) {
+  const article = blogArticles.find(a => a.id === id) || blogArticles[0];
+  document.title = "TiffinBox - " + article.title;
+
+  const container = document.getElementById('article-container');
+  container.innerHTML = `
+    <img src="${article.image}" alt="${article.title}" class="w-100 rounded mb-4 shadow-sm" style="max-height:450px;object-fit:cover">
+    <span class="blog-category">${article.category}</span>
+    <h2 class="fw-bold mt-3">${article.title}</h2>
+    <div class="blog-meta my-3">
+      <span><i class="fas fa-user me-1"></i>${article.author}</span>
+      <span class="mx-2">|</span>
+      <span><i class="fas fa-calendar me-1"></i>${article.date}</span>
+      <span class="mx-2">|</span>
+      <span><i class="fas fa-clock me-1"></i>${article.readTime}</span>
+    </div>
+    <div class="article-body">
+      ${article.content}
+    </div>
+    <div class="card bg-light border-0 mt-5 p-4 shadow-sm">
+      <div class="d-flex align-items-center">
+        <img src="${article.authorImage}" alt="${article.author}" class="rounded-circle me-4" style="width:70px;height:70px;object-fit:cover;flex-shrink:0;">
+        <div>
+          <h5 class="fw-bold mb-1 text-dark">${article.author}</h5>
+          <p class="text-secondary mb-0">Contributing writer at TiffinBox, sharing insights on healthy eating, nutrition, and culinary traditions.</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const relatedIds = blogArticles.filter(a => a.id !== article.id).slice(0, 3);
+  const relatedGrid = document.getElementById('related-grid');
+  relatedGrid.innerHTML = relatedIds.map(a => `
+    <div class="col-md-4 blog-card fade-in visible">
+      <div class="card h-100 border-0 shadow-sm d-flex flex-column">
+        <img src="${a.image}" alt="${a.title}" class="card-img-top" style="height:200px;object-fit:cover;cursor:pointer" onclick="window.location.href='blog-details.html?id=${a.id}'">
+        <div class="card-body d-flex flex-column">
+          <span class="blog-category">${a.category}</span>
+          <h6 class="card-title mt-2" style="cursor:pointer" onclick="window.location.href='blog-details.html?id=${a.id}'">${a.title}</h6>
+          <div class="blog-meta my-2">
+            <span><i class="fas fa-calendar me-1"></i>${a.date}</span>
+            <span class="mx-2">|</span>
+            <span><i class="fas fa-clock me-1"></i>${a.readTime}</span>
+          </div>
+          <a href="blog-details.html?id=${a.id}" class="btn btn-outline-primary btn-sm align-self-start mt-auto">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const urlId = parseInt(new URLSearchParams(window.location.search).get('id'));
+    renderArticle(isNaN(urlId) ? 1 : urlId);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - Delivery Coverage</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html"><i class="fas fa-utensils"></i> TiffinBox</a>
+<button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family:'Playfair Display', serif; color:var(--primary); font-weight:700; font-size:1.6rem;"><i class="fas fa-utensils"></i> TiffinBox</h5>
+<button aria-label="Close" class="btn-close" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+<li class="nav-item dropdown home-dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="index.html">Home 1</a></li>
+<li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+<li class="nav-item"><a class="nav-link" href="menu.html">Sample Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
+<button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<a class="btn nav-login-btn" href="customer-login.html">Login</a>
+<a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero-inner" style="background-image: url('https://images.unsplash.com/photo-1526367790999-0150786686a2?w=1920&amp;h=800&amp;fit=crop');">
+<div class="overlay"></div>
+<div class="container position-relative" style="z-index:2;">
+<h1 class="display-4 fw-bold text-white">Delivery Coverage</h1>
+<p class="lead text-white-50">Check if we deliver to your area</p>
+</div>
+</section>
+<!-- Pincode Checker -->
+<section class="py-5">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title" style="font-family:'Playfair Display',serif;">Check Delivery Availability</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-6">
+<div class="coverage-checker">
+<div class="d-flex gap-2">
+<input class="form-control" id="pincode-input" maxlength="6" placeholder="Enter 6-digit pincode" style="border-radius:25px 0 0 25px;padding:0.75rem 1.25rem;" type="text"/>
+<button class="btn btn-success px-4" onclick="handlePincodeCheck(event)" style="border-radius:0 25px 25px 0;font-weight:600;">Check Availability</button>
+</div>
+<div class="coverage-result" id="pincode-result" style="display:none;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Cities -->
+<section class="py-5" style="background: var(--bg-secondary, #f8f9fa);">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title" style="font-family:'Playfair Display',serif;">We Deliver Across Major Cities</h2>
+<p class="text-muted">Currently serving 8 major cities with plans to expand to more locations soon</p>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-city fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Delhi NCR</h5>
+<p class="text-muted mb-0 small">110001 - 110099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-water fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Mumbai</h5>
+<p class="text-muted mb-0 small">400001 - 400099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-mountain fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Bangalore</h5>
+<p class="text-muted mb-0 small">560001 - 560099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-temple-hindu fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Chennai</h5>
+<p class="text-muted mb-0 small">600001 - 600099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-gopuram fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Hyderabad</h5>
+<p class="text-muted mb-0 small">500001 - 500099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-bridge fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Kolkata</h5>
+<p class="text-muted mb-0 small">700001 - 700099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-landmark fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Pune</h5>
+<p class="text-muted mb-0 small">411001 - 411099</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+<div class="text-center p-4 rounded-4 shadow-sm h-100" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-primary, #fff); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="mb-3"><i class="fas fa-torii-gate fa-2x text-success"></i></div>
+<h5 class="fw-bold" style="font-family:'Playfair Display',serif;">Ahmedabad</h5>
+<p class="text-muted mb-0 small">380001 - 380099</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Delivery Info -->
+<section class="py-5">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title" style="font-family:'Playfair Display',serif;">Why Choose Our Delivery?</h2>
+<p class="text-muted">We go the extra mile to ensure your meals arrive fresh, hot, and on time</p>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="feature-card h-100 text-center p-4 rounded-4" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-secondary, #f8f9fa); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="icon mb-3 mx-auto">
+<i class="fas fa-bolt fa-3x text-success"></i>
+</div>
+<h4 class="fw-bold" style="font-family:'Playfair Display',serif;">Fast Delivery</h4>
+<p class="text-muted mb-0">Meals delivered within 30 minutes of scheduled time</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="feature-card h-100 text-center p-4 rounded-4" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-secondary, #f8f9fa); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="icon mb-3 mx-auto">
+<i class="fas fa-recycle fa-3x text-success"></i>
+</div>
+<h4 class="fw-bold" style="font-family:'Playfair Display',serif;">Eco-Friendly Packaging</h4>
+<p class="text-muted mb-0">Biodegradable packaging to keep meals fresh and hot</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="feature-card h-100 text-center p-4 rounded-4" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-5px)'" style="background: var(--bg-secondary, #f8f9fa); border: 1px solid var(--border-color, #dee2e6); transition: transform 0.3s ease;">
+<div class="icon mb-3 mx-auto">
+<i class="fas fa-map-marker-alt fa-3x text-success"></i>
+</div>
+<h4 class="fw-bold" style="font-family:'Playfair Display',serif;">Real-Time Tracking</h4>
+<p class="text-muted mb-0">Track your delivery in real-time through our app</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Delivery Hours -->
+<section class="py-5" style="background: var(--bg-secondary, #f8f9fa);">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title" style="font-family:'Playfair Display',serif;">Delivery Hours</h2>
+<p class="text-muted">Know when we deliver to plan your meals ahead</p>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="table-responsive rounded-4 overflow-hidden shadow-sm">
+<table class="table table-hover mb-0" style="background: var(--bg-primary, #fff);">
+<thead>
+<tr style="background: var(--primary, #28a745); color: #fff;">
+<th class="px-4 py-3 fw-bold">Day</th>
+<th class="px-4 py-3 fw-bold">Meal</th>
+<th class="px-4 py-3 fw-bold">Time Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="px-4 py-3 fw-semibold" rowspan="2" style="vertical-align:middle;">Monday - Friday</td>
+<td class="px-4 py-3"><i class="fas fa-utensils text-success me-2"></i>Lunch</td>
+<td class="px-4 py-3">11:30 AM - 1:00 PM</td>
+</tr>
+<tr>
+<td class="px-4 py-3"><i class="fas fa-moon text-success me-2"></i>Dinner</td>
+<td class="px-4 py-3">7:00 PM - 8:30 PM</td>
+</tr>
+<tr style="background: var(--bg-secondary, #f8f9fa);">
+<td class="px-4 py-3 fw-semibold">Saturday</td>
+<td class="px-4 py-3"><i class="fas fa-utensils text-success me-2"></i>Lunch</td>
+<td class="px-4 py-3">11:30 AM - 1:00 PM</td>
+</tr>
+<tr>
+<td class="px-4 py-3 fw-semibold">Sunday</td>
+<td class="px-4 py-3" colspan="2"><i class="fas fa-ban text-danger me-2"></i>No Delivery</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-5">
+<div class="container">
+<div class="row text-center mb-5">
+<div class="col-lg-6 mx-auto">
+<h2 class="section-title" style="font-family:'Playfair Display',serif;">Delivery FAQs</h2>
+<p class="text-muted">Common questions about our delivery service</p>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="accordion" id="deliveryFaq">
+<div class="accordion-item rounded-4 mb-3 shadow-sm border-0">
+<h2 class="accordion-header">
+<button aria-controls="df1" aria-expanded="true" class="accordion-button fw-bold" data-bs-target="#df1" data-bs-toggle="collapse" style="font-family:'Playfair Display',serif;" type="button">
+                Is there a minimum order for delivery?
+              </button>
+</h2>
+<div class="accordion-collapse collapse show" data-bs-parent="#deliveryFaq" id="df1">
+<div class="accordion-body text-muted">
+                Yes, we have a minimum order of ₹149 per delivery. This helps us maintain quality while keeping delivery costs affordable. You can mix and match items from our menu to meet the minimum.
+              </div>
+</div>
+</div>
+<div class="accordion-item rounded-4 mb-3 shadow-sm border-0">
+<h2 class="accordion-header">
+<button aria-controls="df2" aria-expanded="false" class="accordion-button collapsed fw-bold" data-bs-target="#df2" data-bs-toggle="collapse" style="font-family:'Playfair Display',serif;" type="button">
+                What are the delivery charges?
+              </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#deliveryFaq" id="df2">
+<div class="accordion-body text-muted">
+                Delivery is free for orders above ₹299. For orders between ₹149 and ₹299, a flat delivery fee of ₹30 applies. Weekly and monthly subscription plans include free delivery on every order.
+              </div>
+</div>
+</div>
+<div class="accordion-item rounded-4 mb-3 shadow-sm border-0">
+<h2 class="accordion-header">
+<button aria-controls="df3" aria-expanded="false" class="accordion-button collapsed fw-bold" data-bs-target="#df3" data-bs-toggle="collapse" style="font-family:'Playfair Display',serif;" type="button">
+                Can I add special delivery instructions?
+              </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#deliveryFaq" id="df3">
+<div class="accordion-body text-muted">
+                Absolutely! You can add delivery notes such as gate codes, floor number, landmark details, or any special instructions during checkout. Our delivery partner will follow your instructions precisely.
+              </div>
+</div>
+</div>
+<div class="accordion-item rounded-4 shadow-sm border-0">
+<h2 class="accordion-header">
+<button aria-controls="df4" aria-expanded="false" class="accordion-button collapsed fw-bold" data-bs-target="#df4" data-bs-toggle="collapse" style="font-family:'Playfair Display',serif;" type="button">
+                What happens if I miss my delivery?
+              </button>
+</h2>
+<div class="accordion-collapse collapse" data-bs-parent="#deliveryFaq" id="df4">
+<div class="accordion-body text-muted">
+                If you're unavailable at the time of delivery, our partner will attempt to reach you by phone. If we can't reach you within 10 minutes, the order will be returned. For subscription plans, we'll credit the amount to your account. You can reschedule missed deliveries from your dashboard.
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-5" style="background: var(--accent-color, #198754);">
+<div class="container text-center">
+<h2 class="display-6 fw-bold text-white mb-3" style="font-family:'Playfair Display',serif;">Ready to Order Fresh Meals?</h2>
+<p class="text-white-50 mb-4">Check your pincode and start enjoying home-style meals delivered to your door.</p>
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+<a class="btn btn-light btn-lg px-4" href="plans.html">View Plans</a>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-6 text-center">
+<h4 class="fw-bold mb-2" style="font-family:'Playfair Display',serif;">Stay Updated</h4>
+<p class="text-muted mb-3">Get weekly menus, offers, and nutrition tips delivered to your inbox.</p>
+<form class="d-flex gap-2">
+<input class="form-control" placeholder="Your email address" type="email"/>
+<button class="btn btn-success px-4" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4">
+<h5><i class="fas fa-utensils"></i> TiffinBox</h5>
+<p>Delivering fresh, home-cooked meals to your doorstep. Authentic Indian cuisine made with love and the finest ingredients.</p>
+<div class="footer-social">
+<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 mb-4">
+<h5>Quick Links</h5>
+<ul class="footer-links">
+<li><a href="about.html">About Us</a></li>
+<li><a href="menu.html">Sample Menu</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="plans.html">Plans</a></li>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Contact</h5>
+<ul class="footer-links">
+<li><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Delhi, India</li>
+<li><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+<li><i class="fas fa-envelope me-2"></i> hello@tiffinbox.com</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Newsletter</h5>
+<p>Subscribe for weekly menus and exclusive offers!</p>
+<form class="d-flex" onsubmit="handleNewsletter(event)">
+<input class="form-control" placeholder="Your email" required="" style="border-radius:25px 0 0 25px;" type="email"/>
+<button class="btn btn-primary" style="border-radius:0 25px 25px 0;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span class="current-year"></span> TiffinBox. All rights reserved. <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Service</a></p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

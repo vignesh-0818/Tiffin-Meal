@@ -1,0 +1,100 @@
+/* ==========================================================================
+   LearnSphere — Responsive
+   ========================================================================== */
+
+/* ---- Desktops ---- */
+@media (max-width: 1399.98px) {
+  :root { --sidebar-w: 244px; }
+}
+
+/* ---- Laptops ---- */
+@media (max-width: 1199.98px) {
+  :root { --sidebar-w: 236px; }
+  .navbar .nav-link { padding: 0.55rem 0.7rem !important; font-size: 0.88rem; }
+  .nav-actions .btn-nav-hide { display: none; }
+  .hero-float-card--tl { left: 0; }
+  .hero-float-card--br { right: 0; }
+}
+
+/* ---- Tablets landscape ---- */
+@media (max-width: 991.98px) {
+  :root { --sidebar-w: 232px; }
+  .navbar-overlay { position: fixed; background: var(--nav-scrolled); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: var(--shadow-sm); }
+  .navbar-overlay .navbar-brand, .navbar-overlay .navbar .nav-link { color: var(--text-primary); }
+  .navbar-overlay .nav-link::after { background: var(--grad-brand); }
+  .navbar-overlay:not(.navbar-scrolled) .nav-toggle { background: var(--bg-white); border-color: var(--border); color: var(--text-primary); }
+  .navbar-anchor { display: none; }
+  .hero-container { padding-top: 7rem; }
+  .hero-media { margin-top: 3.5rem; }
+  .hero-media .hero-img-ring { display: none; }
+  .hero-float-card--tl { top: 4%; left: 0; }
+  .hero-float-card--br { right: 0; }
+
+  /* dashboard & admin layout stacks */
+  .dash-layout { grid-template-columns: 1fr; }
+  .dash-sidebar { position: static; margin-bottom: 1rem; }
+  .dash-nav { flex-direction: row; flex-wrap: wrap; }
+  .dash-nav a { flex: 1 1 auto; justify-content: center; text-align: center; }
+  .dash-nav a .dash-nav-badge { margin-left: 0.3rem; }
+
+  .admin-sidebar { transform: translateX(-100%); }
+  html[dir="rtl"] .admin-sidebar { transform: translateX(100%); }
+  .admin-sidebar.open { transform: translateX(0); }
+  .admin-main { margin-left: 0; margin-right: 0 !important; }
+  .admin-content { padding: 1.1rem; }
+
+  .article-nav { grid-template-columns: 1fr; }
+  .footer-bottom .row > div { margin-bottom: 0.8rem; }
+  .cta-box .cta-art { display: none; }
+}
+
+/* ---- Tablets portrait / large phones ---- */
+@media (max-width: 767.98px) {
+  .auth-page { flex-direction: column; }
+  .auth-side { flex: 0 0 auto; min-height: 240px; padding: 2rem; }
+  .auth-side .auth-quote { font-size: 1.2rem; }
+  .auth-side .auth-stats { display: none; }
+  .auth-side .auth-art { width: min(240px, 70%); }
+  .auth-main { padding: 2.5rem 1.2rem; }
+
+  .process-connector { display: none; }
+  .comment-item.reply { margin-left: 1.2rem; margin-right: 1.2rem; }
+  html[dir="rtl"] .comment-item.reply { margin-left: 1.2rem; margin-right: 1.2rem; }
+
+  .countdown .cd-item { width: 82px; }
+  .countdown .cd-num { font-size: 1.8rem; }
+
+  .admin-topbar { padding: 0.7rem 1rem; }
+  .admin-topbar .at-search { display: none; }
+  .at-dropdown .dropdown-menu { width: min(340px, 92vw); }
+  .chat-bubble { max-width: 85%; }
+  .chat-box { height: 480px; }
+}
+
+/* ---- Phones ---- */
+@media (max-width: 575.98px) {
+  .section-header { text-align: center; }
+  .hero-ctas .btn { flex: 1 1 100%; }
+  .hero-float-card--tl { top: 0; }
+  .hero-float-card { padding: 0.7rem 0.85rem; }
+  .hero-float-card .fc-icon { width: 36px; height: 36px; font-size: 1rem; }
+  .pricing-card.featured { transform: none; }
+  .pricing-card.featured:hover { transform: translateY(-6px); }
+  .auth-social { grid-template-columns: 1fr; }
+  .back-to-top { right: 16px; bottom: 16px; width: 46px; height: 46px; }
+  html[dir="rtl"] .back-to-top { right: auto; left: 16px; }
+  .newsletter-form .btn { font-size: 0.85rem; padding-left: 1.1rem; padding-right: 1.1rem; }
+  .article-nav { gap: 0.6rem; }
+  .footer-bottom .fb-links { flex-wrap: wrap; gap: 0.8rem 1.2rem; }
+  .cta-box { padding: 2rem 1.4rem; }
+  .dash-head { flex-direction: column; align-items: flex-start; }
+  .admin-page-head { flex-direction: column; align-items: flex-start; }
+  .chart-box { height: 260px; }
+  .dash-welcome { padding: 1.4rem; }
+}
+
+/* ---- Very small ---- */
+@media (max-width: 359.98px) {
+  .navbar .brand-text { display: none; }
+  .hero-trust { gap: 0.9rem; }
+}

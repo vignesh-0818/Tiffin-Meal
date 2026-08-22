@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>TiffinBox - Coming Soon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Base page styles */
+        body.coming-soon {
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: #F7F5EF;
+            color: #1F2933;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.coming-soon.dark-mode {
+            background-color: #111111;
+            color: #F5F5F5;
+        }
+
+        /* Top Bar & Controls */
+        .coming-soon-top-bar {
+            padding: 1.5rem 0;
+            width: 100%;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1F2933;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .brand-name i {
+            color: var(--accent-color, #198754);
+        }
+
+        body.coming-soon.dark-mode .brand-name {
+            color: #F5F5F5;
+        }
+        
+        .brand-name:hover {
+            color: var(--accent-color, #198754);
+        }
+        
+        body.coming-soon.dark-mode .brand-name:hover {
+            color: var(--accent-color, #198754);
+        }
+
+        .control-btn {
+            color: #667085;
+            border: 1px solid #E5E7EB;
+            background: transparent;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        body.coming-soon.dark-mode .control-btn {
+            color: #B8C0CC;
+            border-color: #353535;
+        }
+
+        .control-btn:hover {
+            background-color: var(--accent-color, #198754);
+            color: #ffffff;
+            border-color: var(--accent-color, #198754);
+        }
+
+        /* Main Content */
+        .coming-soon-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .coming-soon-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .coming-soon-subtitle {
+            color: #667085;
+            font-size: 1.15rem;
+            max-width: 500px;
+            margin: 0 auto 3.5rem auto;
+            font-weight: 400;
+        }
+
+        body.coming-soon.dark-mode .coming-soon-subtitle {
+            color: #B8C0CC;
+        }
+
+        /* Countdown */
+        .countdown-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .count-item {
+            background-color: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            min-width: 110px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        body.coming-soon.dark-mode .count-item {
+            background-color: #1D1D1D;
+            border-color: #353535;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .count-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color, #198754);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .count-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: #667085;
+        }
+        
+        body.coming-soon.dark-mode .count-label {
+            color: #B8C0CC;
+        }
+
+        /* Newsletter */
+        .newsletter-form {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto 2.5rem auto;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .newsletter-input {
+            background-color: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            color: #1F2933;
+            border-radius: 8px;
+            padding: 0.85rem 1.25rem;
+            flex-grow: 1;
+            transition: all 0.3s;
+        }
+
+        body.coming-soon.dark-mode .newsletter-input {
+            background-color: #1D1D1D;
+            border-color: #353535;
+            color: #F5F5F5;
+        }
+        
+        .newsletter-input:focus {
+            box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.2);
+            border-color: var(--accent-color, #198754);
+            outline: none;
+        }
+        
+        .newsletter-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--accent-color, #198754);
+            color: #ffffff;
+            border: 1px solid var(--accent-color, #198754);
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.3s, transform 0.1s;
+        }
+
+        .btn-primary-custom:hover {
+            opacity: 0.9;
+            color: #ffffff;
+        }
+        
+        .btn-primary-custom:active {
+            transform: scale(0.98);
+        }
+
+        /* Social */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            color: #667085;
+            font-size: 1.1rem;
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        body.coming-soon.dark-mode .social-link {
+            color: #B8C0CC;
+            background-color: #1D1D1D;
+            border-color: #353535;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color, #198754);
+            color: #ffffff;
+            border-color: var(--accent-color, #198754);
+        }
+
+        /* Back link */
+        .back-link {
+            color: #667085;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        body.coming-soon.dark-mode .back-link {
+            color: #B8C0CC;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color, #198754);
+        }
+
+        [dir="rtl"] .back-link i {
+            transform: scaleX(-1);
+        }
+
+        /* Responsive */
+        @media (max-width: 575px) {
+            .countdown-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                width: 100%;
+                max-width: 320px;
+                margin-bottom: 2.5rem;
+            }
+            .count-item {
+                min-width: 0;
+                padding: 1.25rem 0.5rem;
+            }
+            .coming-soon-heading {
+                font-size: 2.5rem;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .btn-primary-custom {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="coming-soon">
+    <div class="coming-soon-top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="brand-name">
+                <i class="fas fa-utensils"></i> TiffinBox
+            </a>
+            <div class="d-flex align-items-center gap-2 gap-sm-3">
+                <button class="control-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="control-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL">
+                    <i class="fas fa-align-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="coming-soon-content">
+        <h1 class="coming-soon-heading">We're Coming Soon!</h1>
+        <p class="coming-soon-subtitle">Something delicious is on the way. We're preparing fresh, home-style meals just for you.</p>
+
+        <div class="countdown-container">
+            <div class="count-item">
+                <div class="count-number" id="countdown-days">00</div>
+                <div class="count-label">Days</div>
+            </div>
+            <div class="count-item">
+                <div class="count-number" id="countdown-hours">00</div>
+                <div class="count-label">Hours</div>
+            </div>
+            <div class="count-item">
+                <div class="count-number" id="countdown-minutes">00</div>
+                <div class="count-label">Minutes</div>
+            </div>
+            <div class="count-item">
+                <div class="count-number" id="countdown-seconds">00</div>
+                <div class="count-label">Seconds</div>
+            </div>
+        </div>
+
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn-primary-custom text-nowrap">Notify Me</button>
+        </form>
+
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Website
+        </a>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for main.js to potentially load theme preference
+            const isDark = localStorage.getItem('theme') === 'dark';
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+            }
+
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30);
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = targetDate - now;
+
+                if (diff <= 0) return;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            if (typeof initTheme === 'function') initTheme();
+            if (typeof initRTL === 'function') initRTL();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | SparklePro Admin</title>
+  <link rel="icon" type="image/webp" href="../assets/images/logo/logo-main.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <div class="admin-wrap">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+      <a class="as-brand" href="dashboard.html" aria-label="SparklePro admin home">
+        <span class="brand-logo"><img src="../assets/images/logo/logo-main.webp" alt="SparklePro logo" width="42" height="42"></span>
+        <span>SparklePro<small>Admin Panel</small></span>
+      </a>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <span class="an-label">Main</span>
+        <a href="dashboard.html"><i class="bi bi-speedometer2"></i>Dashboard</a>
+        <a href="analytics.html"><i class="bi bi-graph-up-arrow"></i>Analytics</a>
+        <span class="an-label">Manage</span>
+        <a href="bookings.html"><i class="bi bi-calendar-check"></i>Bookings<span class="an-badge">12</span></a>
+        <a href="users.html"><i class="bi bi-people"></i>Users</a>
+        <a href="cleaners.html"><i class="bi bi-person-gear"></i>Cleaners</a>
+        <a href="payments.html"><i class="bi bi-credit-card-2-front"></i>Payments</a>
+        <span class="an-label">Other</span>
+        <a href="messages.html"><i class="bi bi-chat-dots"></i>Messages<span class="an-badge blue">3</span></a>
+        <a href="reviews.html"><i class="bi bi-star"></i>Reviews</a>
+        <a href="settings.html" class="active"><i class="bi bi-gear"></i>Settings</a>
+      </nav>
+      <div class="as-footer">
+        <div class="af-user">
+          <img src="../assets/images/avatars/avatar-01.webp" alt="Sophia Turner" width="40" height="40">
+          <div>
+            <div class="af-name">Sophia Turner</div>
+            <div class="af-role">Super Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button type="button" class="nav-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><i class="bi bi-list"></i></button>
+        <div class="at-search">
+          <i class="bi bi-search"></i>
+          <input type="search" class="form-control" placeholder="Search bookings, customers…" aria-label="Search the admin panel">
+        </div>
+        <div class="at-actions">
+          <button type="button" class="nav-toggle" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode"><i class="bi bi-sun" data-icon-light></i><i class="bi bi-moon-stars d-none" data-icon-dark></i></button>
+          <button type="button" class="nav-toggle" data-dir-toggle aria-label="Toggle RTL layout" title="Toggle RTL"><i class="bi bi-text-right" data-icon-ltr></i><i class="bi bi-text-left d-none" data-icon-rtl></i></button>
+          <div class="at-dropdown">
+            <button type="button" class="nav-toggle at-bell" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
+              <i class="bi bi-bell"></i><span class="badge">5</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="at-notif-item unread">
+                <span class="ni-icon icon-blue"><i class="bi bi-calendar-check"></i></span>
+                <div><div class="ni-title">New booking #SP-1024 confirmed</div><div class="ni-time">5 min ago</div></div>
+              </li>
+              <li class="at-notif-item unread">
+                <span class="ni-icon icon-gold"><i class="bi bi-star-fill"></i></span>
+                <div><div class="ni-title">Emily Carter left a 5-star review</div><div class="ni-time">1 hr ago</div></div>
+              </li>
+              <li class="at-notif-item">
+                <span class="ni-icon icon-teal"><i class="bi bi-cash-coin"></i></span>
+                <div><div class="ni-title">Payment of $420 received</div><div class="ni-time">2 hrs ago</div></div>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="text-center p-2"><a class="small fw-semibold" href="bookings.html">View all notifications</a></li>
+            </ul>
+          </div>
+          <div class="at-dropdown">
+            <button type="button" class="d-flex align-items-center gap-2 bg-transparent border-0 p-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Account menu">
+              <img src="../assets/images/avatars/avatar-01.webp" alt="Sophia Turner" width="38" height="38" class="rounded-circle border">
+              <span class="d-none d-md-inline fw-semibold">Sophia</span>
+              <i class="bi bi-chevron-down small"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end wide">
+              <li><h6 class="dropdown-header">Sophia Turner<br><small class="text-muted">Super Admin</small></h6></li>
+              <li><a class="dropdown-item" href="settings.html"><i class="bi bi-person me-2"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="bookings.html"><i class="bi bi-calendar-check me-2"></i>My Bookings</a></li>
+              <li><a class="dropdown-item" href="../contact.html"><i class="bi bi-life-preserver me-2"></i>Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <div class="admin-page-head">
+          <div>
+            <h2>Settings</h2>
+            <p>Configure your business profile, branding, bookings and payments.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <ul class="nav nav-pills gap-2 flex-wrap mb-4" id="settingsTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-general-tab" data-bs-toggle="pill" data-bs-target="#tab-general" type="button" role="tab" aria-controls="tab-general" aria-selected="true"><i class="bi bi-buildings me-1"></i> General</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-branding-tab" data-bs-toggle="pill" data-bs-target="#tab-branding" type="button" role="tab" aria-controls="tab-branding" aria-selected="false"><i class="bi bi-palette me-1"></i> Branding</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-bookings-tab" data-bs-toggle="pill" data-bs-target="#tab-bookings" type="button" role="tab" aria-controls="tab-bookings" aria-selected="false"><i class="bi bi-calendar-check me-1"></i> Bookings</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-notifications-tab" data-bs-toggle="pill" data-bs-target="#tab-notifications" type="button" role="tab" aria-controls="tab-notifications" aria-selected="false"><i class="bi bi-bell me-1"></i> Notifications</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-payments-tab" data-bs-toggle="pill" data-bs-target="#tab-payments" type="button" role="tab" aria-controls="tab-payments" aria-selected="false"><i class="bi bi-credit-card me-1"></i> Payments</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-security-tab" data-bs-toggle="pill" data-bs-target="#tab-security" type="button" role="tab" aria-controls="tab-security" aria-selected="false"><i class="bi bi-shield-lock me-1"></i> Security</button>
+              </li>
+            </ul>
+
+            <form id="settingsForm" novalidate>
+              <div class="tab-content" id="settingsTabContent">
+
+                <div class="tab-pane fade show active" id="tab-general" role="tabpanel" aria-labelledby="tab-general-tab">
+                  <div class="card-premium">
+                    <div class="p-4 pb-3">
+                      <h5 class="mb-0">General Settings</h5>
+                      <p class="text-muted small mb-0">Your company details shown on bookings and invoices.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label class="form-label" for="companyName">Company Name</label>
+                          <input type="text" class="form-control" id="companyName" value="SparklePro Cleaning Co." required>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="companyEmail">Company Email</label>
+                          <input type="email" class="form-control" id="companyEmail" value="hello@sparklepro.com" required>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="companyPhone">Phone</label>
+                          <input type="tel" class="form-control" id="companyPhone" value="+1 (555) 012-3456" required>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="companyAddress">Address</label>
+                          <input type="text" class="form-control" id="companyAddress" value="221 Sparkle Avenue, Riverside, CA 92501" required>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label" for="workDays">Working Days</label>
+                          <select class="form-select" id="workDays">
+                            <option value="mon-sat" selected>Monday – Saturday</option>
+                            <option value="mon-fri">Monday – Friday</option>
+                            <option value="mon-sun">Monday – Sunday</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label" for="workOpen">Opening Time</label>
+                          <select class="form-select" id="workOpen">
+                            <option value="07:00">7:00 AM</option>
+                            <option value="08:00" selected>8:00 AM</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label" for="workClose">Closing Time</label>
+                          <select class="form-select" id="workClose">
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00" selected>8:00 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                          </select>
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="timezone">Time Zone</label>
+                          <select class="form-select" id="timezone">
+                            <option value="pt" selected>(GMT-8) Pacific Time</option>
+                            <option value="mt">(GMT-7) Mountain Time</option>
+                            <option value="ct">(GMT-6) Central Time</option>
+                            <option value="et">(GMT-5) Eastern Time</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="tab-branding" role="tabpanel" aria-labelledby="tab-branding-tab">
+                  <div class="card-premium">
+                    <div class="p-4 pb-3">
+                      <h5 class="mb-0">Branding</h5>
+                      <p class="text-muted small mb-0">Logo and visuals used across customer-facing pages.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                      <label class="form-label">Company Logo</label>
+                      <div class="d-flex align-items-center gap-3 flex-wrap">
+                        <span class="brand-logo" style="width:76px;height:76px;border-radius:16px;overflow:hidden;border:1px solid var(--border)">
+                          <img src="../assets/images/logo/logo-main.webp" alt="Current SparklePro logo" width="76" height="76">
+                        </span>
+                        <div>
+                          <input type="file" class="form-control" id="logoUpload" accept="image/*" aria-label="Upload a new logo">
+                          <span class="small text-muted">PNG, WebP or JPG. Max 2 MB.</span>
+                        </div>
+                      </div>
+                      <hr class="section-divider my-4 opacity-25">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label class="form-label" for="siteName">Site Name</label>
+                          <input type="text" class="form-control" id="siteName" value="SparklePro">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="tagline">Tagline</label>
+                          <input type="text" class="form-control" id="tagline" value="Premium Home & Commercial Cleaning">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label" for="brandPrimary">Primary Color</label>
+                          <input type="color" class="form-control form-control-color" id="brandPrimary" value="#2e7cf6">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label" for="brandAccent">Accent Color</label>
+                          <input type="color" class="form-control form-control-color" id="brandAccent" value="#8b5cf6">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label" for="brandTeal">Teal Color</label>
+                          <input type="color" class="form-control form-control-color" id="brandTeal" value="#14b8a6">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="tab-bookings" role="tabpanel" aria-labelledby="tab-bookings-tab">
+                  <div class="card-premium">
+                    <div class="p-4 pb-3">
+                      <h5 class="mb-0">Booking Settings</h5>
+                      <p class="text-muted small mb-0">How new appointments are handled.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold">Auto-confirm bookings</div>
+                          <div class="small text-muted">Confirm new requests instantly without admin review.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="autoConfirm" checked>
+                          <label class="form-check-label" for="autoConfirm">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold">Send booking reminders</div>
+                          <div class="small text-muted">Email and SMS reminders 24 hours before each visit.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="reminders" checked>
+                          <label class="form-check-label" for="reminders">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold">Allow same-day bookings</div>
+                          <div class="small text-muted">Let customers book for today when a slot is free.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="sameDay">
+                          <label class="form-check-label" for="sameDay">Off</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3">
+                        <div>
+                          <div class="fw-semibold">Require deposit</div>
+                          <div class="small text-muted">Collect a 20% deposit to secure large bookings.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="deposit" checked>
+                          <label class="form-check-label" for="deposit">On</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="tab-notifications" role="tabpanel" aria-labelledby="tab-notifications-tab">
+                  <div class="card-premium">
+                    <div class="p-4 pb-3">
+                      <h5 class="mb-0">Notifications</h5>
+                      <p class="text-muted small mb-0">Which events trigger email alerts to the admin team.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold">New booking alerts</div>
+                          <div class="small text-muted">Email the team when a booking is created.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="notifBookings" checked>
+                          <label class="form-check-label" for="notifBookings">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold">New review alerts</div>
+                          <div class="small text-muted">Notify us when a review needs moderation.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="notifReviews" checked>
+                          <label class="form-check-label" for="notifReviews">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold">Payment receipts</div>
+                          <div class="small text-muted">Email a copy of every confirmed payment.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="notifPayments" checked>
+                          <label class="form-check-label" for="notifPayments">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3">
+                        <div>
+                          <div class="fw-semibold">Weekly summary report</div>
+                          <div class="small text-muted">A Monday digest of bookings, revenue and reviews.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="notifWeekly" checked>
+                          <label class="form-check-label" for="notifWeekly">On</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="tab-payments" role="tabpanel" aria-labelledby="tab-payments-tab">
+                  <div class="card-premium">
+                    <div class="p-4 pb-3">
+                      <h5 class="mb-0">Payment Settings</h5>
+                      <p class="text-muted small mb-0">Accepted payment methods and currency.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold"><i class="bi bi-credit-card me-2 text-primary"></i>Card payments</div>
+                          <div class="small text-muted">Visa, Mastercard, Amex and Discover.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="payCards" checked>
+                          <label class="form-check-label" for="payCards">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold"><i class="bi bi-bank me-2 text-success"></i>Bank transfers</div>
+                          <div class="small text-muted">Direct ACH payments for business accounts.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="payBank" checked>
+                          <label class="form-check-label" for="payBank">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3 border-bottom">
+                        <div>
+                          <div class="fw-semibold"><i class="bi bi-paypal me-2 text-info"></i>PayPal</div>
+                          <div class="small text-muted">Online wallet checkout for all customers.</div>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="payPaypal" checked>
+                          <label class="form-check-label" for="payPaypal">On</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center py-3">
+                        <div>
+                          <div class="fw-semibold">Default currency</div>
+                          <div class="small text-muted">Shown on bookings and invoices.</div>
+                        </div>
+                        <select class="form-select" style="width:auto" id="currency">
+                          <option value="usd" selected>USD — US Dollar</option>
+                          <option value="eur">EUR — Euro</option>
+                          <option value="gbp">GBP — British Pound</option>
+                          <option value="cad">CAD — Canadian Dollar</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="tab-security" role="tabpanel" aria-labelledby="tab-security-tab">
+                  <div class="card-premium">
+                    <div class="p-4 pb-3">
+                      <h5 class="mb-0">Change Password</h5>
+                      <p class="text-muted small mb-0">Use at least 8 characters with a mix of letters and numbers.</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                      <div class="row g-3">
+                        <div class="col-12">
+                          <label class="form-label" for="currentPass">Current Password</label>
+                          <input type="password" class="form-control" id="currentPass" placeholder="Enter current password" autocomplete="current-password">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="newPass">New Password</label>
+                          <input type="password" class="form-control" id="newPass" placeholder="Enter new password" autocomplete="new-password">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="confirmPass">Confirm New Password</label>
+                          <input type="password" class="form-control" id="confirmPass" placeholder="Repeat new password" autocomplete="new-password">
+                        </div>
+                        <div class="col-12">
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="twoFactor" checked>
+                            <label class="form-check-label" for="twoFactor">Require two-factor authentication for admin logins</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary" data-loading="Saving…"><i class="bi bi-check2-circle"></i> Save Changes</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card-premium mb-4">
+              <div class="p-4 pb-3">
+                <h5 class="mb-0">Admin Profile</h5>
+              </div>
+              <div class="p-4 pt-0 text-center">
+                <img src="../assets/images/avatars/avatar-01.webp" alt="Sophia Turner" width="84" height="84" class="rounded-circle mx-auto d-block border" loading="lazy">
+                <h6 class="mt-3 mb-0">Sophia Turner</h6>
+                <span class="badge-soft">Super Admin</span>
+                <p class="small text-muted mt-2 mb-0">sophia.turner@sparklepro.com<br>Member since 2019</p>
+                <a href="settings.html" class="btn btn-outline-primary w-100 mt-3"><i class="bi bi-pencil me-1"></i> Edit Profile</a>
+              </div>
+            </div>
+
+            <div class="card-premium mb-4">
+              <div class="p-4 pb-3">
+                <h5 class="mb-0">Quick Actions</h5>
+              </div>
+              <div class="p-4 pt-0 d-grid gap-2">
+                <a href="../booking.html" class="btn btn-primary"><i class="bi bi-calendar-plus me-1"></i> New Booking</a>
+                <a href="users.html" class="btn btn-outline-primary"><i class="bi bi-person-plus me-1"></i> Add User</a>
+                <a href="payments.html" class="btn btn-outline-primary"><i class="bi bi-download me-1"></i> Export Payments</a>
+                <a href="../contact.html" class="btn btn-outline-secondary"><i class="bi bi-life-preserver me-1"></i> Get Support</a>
+              </div>
+            </div>
+
+            <div class="card-premium">
+              <div class="p-4 pb-3">
+                <h5 class="mb-0">Danger Zone</h5>
+              </div>
+              <div class="p-4 pt-0">
+                <p class="small text-muted">These actions are permanent and cannot be undone.</p>
+                <a href="#" class="btn btn-outline-danger w-100"><i class="bi bi-arrow-counterclockwise me-1"></i> Reset Demo Data</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="admin-sidebar-backdrop" id="sidebarBackdrop"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/darkmode.js" defer></script>
+  <script src="../assets/js/rtl.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

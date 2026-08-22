@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f2ff"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset=".6" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity=".5">
+    <circle cx="110" cy="70" r="140" fill="#ede9fe"/>
+    <circle cx="720" cy="400" r="150" fill="#cffafe"/>
+  </g>
+  <g transform="translate(140 70)">
+    <g transform="rotate(-12 160 160)">
+      <path d="M40 150c40 20 60 10 120-20l120 60v-150c-40-10-70-6-120 14" fill="#fff" stroke="#e9e4fa" stroke-width="3"/>
+      <path d="M40 150v150c40 20 60 10 120-20l120 60v-150" fill="none" stroke="#c4b5fd" stroke-width="4"/>
+      <path d="M160 130v150M280 190v150" fill="none" stroke="#ede9fe" stroke-width="4"/>
+    </g>
+  </g>
+  <g transform="translate(560 130)">
+    <rect width="170" height="160" rx="22" fill="#fff" stroke="#e9e4fa" stroke-width="2.5"/>
+    <circle cx="52" cy="50" r="22" fill="#ede9fe"/>
+    <path d="M52 34l12 16-12 16-12-16Z" fill="#7c3aed"/>
+    <rect x="88" y="34" width="60" height="10" rx="5" fill="#ede9fe"/>
+    <rect x="88" y="54" width="46" height="9" rx="4.5" fill="#e9e4fa"/>
+    <path d="M30 110h110" stroke="#e9e4fa" stroke-width="3" stroke-linecap="round"/>
+    <rect x="30" y="124" width="80" height="9" rx="4.5" fill="#f0edff"/>
+    <circle cx="140" cy="128" r="6" fill="url(#gold)"/>
+  </g>
+  <circle cx="580" cy="380" r="8" fill="#0d9488"/>
+  <g font-family="Arial, sans-serif" font-weight="700" font-size="26" fill="#8b5cf6" text-anchor="middle">
+    <text x="330" y="410">2014</text>
+  </g>
+</svg>

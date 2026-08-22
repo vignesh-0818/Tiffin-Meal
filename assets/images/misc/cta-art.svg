@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset=".55" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(160 60)">
+    <g fill="#fff" opacity=".92">
+      <path d="M100 60l100 46-100 46-100-46Z"/>
+      <path d="M60 84v48c0 26 40 42 40 42s40-16 40-42V84l-40 23Z"/>
+    </g>
+    <path d="M140 106v52c0 14-10 24-24 24" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="112" cy="184" r="9" fill="url(#gold)"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="800" font-size="30" fill="#fff" opacity=".85">
+    <text x="260" y="250" text-anchor="middle">Achieve More</text>
+  </g>
+  <circle cx="90" cy="330" r="14" fill="#fff" opacity=".3"/>
+  <circle cx="420" cy="90" r="10" fill="#fff" opacity=".35"/>
+  <path d="M60 340c60-30 110-30 170 0s110 30 170 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+</svg>

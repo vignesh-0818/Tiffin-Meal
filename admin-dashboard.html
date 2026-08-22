@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - Admin Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="dashboard-wrapper">
+<!-- Sidebar -->
+<aside class="dashboard-sidebar">
+<div class="sidebar-header">
+<a class="brand" href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+<i class="fas fa-shield-alt"></i>
+<span style="font-family:'Playfair Display', serif; font-weight:700; font-size:1.3rem; color:var(--primary);">TiffinBox</span>
+</a>
+</div>
+<ul class="sidebar-nav flex-grow-1" style="overflow-y: auto;">
+<li class="sidebar-category">Overview</li>
+<li><a class="nav-link active" data-section="overview" href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+<li class="sidebar-category">Management</li>
+<li><a class="nav-link" data-section="users" href="#"><i class="fas fa-users"></i> Customers</a></li>
+<li><a class="nav-link" data-section="subscriptions" href="#"><i class="fas fa-box"></i> Subscriptions</a></li>
+<li><a class="nav-link" data-section="meals" href="#"><i class="fas fa-utensils"></i> Meal Plans / Menu</a></li>
+<li><a class="nav-link" data-section="orders" href="#"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+<li><a class="nav-link" data-section="deliveries" href="#"><i class="fas fa-truck"></i> Deliveries</a></li>
+<li class="sidebar-category">Business</li>
+<li><a class="nav-link" data-section="payments" href="#"><i class="fas fa-credit-card"></i> Payments</a></li>
+<li><a class="nav-link" data-section="messages" href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+<li><a class="nav-link" data-section="analytics" href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+<li><a class="nav-link" data-section="reports" href="#"><i class="fas fa-file-alt"></i> Reports</a></li>
+<li class="sidebar-category">System</li>
+<li><a class="nav-link" data-section="settings" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+</ul>
+<div style="padding: 1rem; border-top: 1px solid var(--border-color); margin-top:auto;">
+<div class="sidebar-profile" style="display:flex; align-items:center; gap:0.75rem; padding-bottom:1rem;">
+<img alt="Admin" class="profile-avatar" src="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"/>
+<div class="profile-info">
+<h6 class="name m-0 fw-bold" style="font-size:0.9rem;">Admin User</h6>
+<span class="role text-secondary" style="font-size:0.75rem;">Administrator</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="dashboard-main">
+<!-- Top Bar -->
+<div class="topbar">
+<div class="topbar-left">
+<button class="sidebar-toggle">
+<i class="fas fa-bars"></i>
+</button>
+<h4 class="topbar-title">Admin Overview</h4>
+</div>
+<div class="topbar-right" style="display: flex; gap: 0.5rem; align-items: center;">
+<a class="back-to-website" href="index.html">
+<i class="fas fa-external-link-alt"></i> Back to Website
+</a>
+
+<button class="btn btn-outline-primary btn-sm fw-semibold d-inline-flex align-items-center justify-content-center" id="theme-toggle" onclick="toggleTheme()" style="width: 40px; height: 40px; border-radius: 50%;" title="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+</button>
+<button class="btn btn-outline-primary btn-sm fw-semibold d-inline-flex align-items-center justify-content-center" id="rtl-toggle" onclick="toggleRTL()" style="width: 40px; height: 40px; border-radius: 50%;" title="Toggle RTL">
+    <i class="fas fa-language"></i>
+</button>
+<button class="btn btn-primary btn-sm fw-semibold d-inline-flex align-items-center justify-content-center px-3" onclick="logout()" style="height: 40px; border-radius: 20px;">
+    <i class="fas fa-sign-out-alt me-2"></i> Logout
+</button>
+
+</div>
+</div>
+<div class="dashboard-content">
+<!-- Overview Section -->
+<section class="dashboard-section" id="section-overview" style="display:block;">
+<div class="welcome-banner">
+<h2>Welcome, Admin!</h2>
+<p>Here's your tiffin service overview</p>
+</div>
+<div class="stats-grid row">
+<div class="col-lg-3 col-md-6 mb-4">
+<div class="stat-card-dashboard m-0" style="display: flex; flex-direction: column; align-items: flex-start !important; gap: 8px !important;">
+<p style="margin:0; color:var(--text-secondary); font-weight:600; font-size:0.9rem;">Total Customers</p>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div class="stat-icon flex-shrink-0" style="background:rgba(41, 128, 185, 0.1); color:#2980b9;">
+<i class="fas fa-users"></i>
+</div>
+<h3 id="total-users" style="margin:0; font-weight:700;">0</h3>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<div class="stat-card-dashboard m-0" style="display: flex; flex-direction: column; align-items: flex-start !important; gap: 8px !important;">
+<p style="margin:0; color:var(--text-secondary); font-weight:600; font-size:0.9rem;">Active Subscriptions</p>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div class="stat-icon flex-shrink-0" style="background:rgba(39, 174, 96, 0.1); color:#27ae60;">
+<i class="fas fa-box"></i>
+</div>
+<h3 id="active-plans" style="margin:0; font-weight:700;">0</h3>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<div class="stat-card-dashboard m-0" style="display: flex; flex-direction: column; align-items: flex-start !important; gap: 8px !important;">
+<p style="margin:0; color:var(--text-secondary); font-weight:600; font-size:0.9rem;">Today's Orders</p>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div class="stat-icon flex-shrink-0" style="background:rgba(230, 126, 34, 0.1); color:#e67e22;">
+<i class="fas fa-shopping-cart"></i>
+</div>
+<h3 id="total-orders" style="margin:0; font-weight:700;">0</h3>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<div class="stat-card-dashboard m-0" style="display: flex; flex-direction: column; align-items: flex-start !important; gap: 8px !important;">
+<p style="margin:0; color:var(--text-secondary); font-weight:600; font-size:0.9rem;">Today's Deliveries</p>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div class="stat-icon flex-shrink-0" style="background:rgba(142, 68, 173, 0.1); color:#8e44ad;">
+<i class="fas fa-truck"></i>
+</div>
+<h3 id="pending-deliveries" style="margin:0; font-weight:700;">0</h3>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<div class="stat-card-dashboard m-0" style="display: flex; flex-direction: column; align-items: flex-start !important; gap: 8px !important;">
+<p style="margin:0; color:var(--text-secondary); font-weight:600; font-size:0.9rem;">Monthly Revenue</p>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div class="stat-icon flex-shrink-0" style="background:rgba(231, 76, 60, 0.1); color:#e74c3c;">
+<i class="fas fa-rupee-sign"></i>
+</div>
+<h3 id="total-revenue" style="margin:0; font-weight:700;">0</h3>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 mb-4">
+<div class="stat-card-dashboard m-0" style="display: flex; flex-direction: column; align-items: flex-start !important; gap: 8px !important;">
+<p style="margin:0; color:var(--text-secondary); font-weight:600; font-size:0.9rem;">Pending Orders</p>
+<div style="display: flex; align-items: center; gap: 12px;">
+<div class="stat-icon flex-shrink-0" style="background:rgba(241, 196, 15, 0.1); color:#f39c12;">
+<i class="fas fa-clock"></i>
+</div>
+<h3 id="completed-deliveries" style="margin:0; font-weight:700;">0</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Analytics Section -->
+<section class="dashboard-section" id="section-analytics" style="display:none;">
+<div class="row">
+<div class="col-lg-6">
+<div class="dashboard-card">
+<h5 class="card-title">Revenue Chart</h5>
+<div class="chart-container" id="revenue-chart"></div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="dashboard-card">
+<h5 class="card-title">Orders Chart</h5>
+<div class="chart-container" id="orders-chart"></div>
+</div>
+</div>
+</div>
+<div class="row mt-4">
+<div class="col-lg-6">
+<div class="dashboard-card">
+<h5 class="card-title">Subscription Statistics</h5>
+<div class="pie-chart-display">
+<div class="pie-stat">
+<span class="pie-label pie-active">Active</span>
+<span class="pie-value" id="subs-active-pct">0%</span>
+</div>
+<div class="pie-stat">
+<span class="pie-label pie-paused">Paused</span>
+<span class="pie-value" id="subs-paused-pct">0%</span>
+</div>
+<div class="pie-stat">
+<span class="pie-label pie-cancelled">Cancelled</span>
+<span class="pie-value" id="subs-cancelled-pct">0%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="dashboard-card">
+<h5 class="card-title">Customer Growth</h5>
+<div class="growth-stats" id="customer-growth"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Users Section -->
+<section class="dashboard-section" id="section-users" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Customer Management</h5>
+</div>
+<div class="card-toolbar">
+<input class="form-control" onkeyup="searchCustomers(this.value)" placeholder="Search customers..." type="text"/>
+<select class="form-select" onchange="filterCustomers(this.value)">
+<option value="all">All</option>
+<option value="active">Active</option>
+<option value="paused">Paused</option>
+<option value="cancelled">Cancelled</option>
+</select>
+</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Customer</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Plan</th>
+<th>Status</th>
+<th>Joined</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="customer-table-body"></tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Orders Section -->
+<section class="dashboard-section" id="section-orders" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Order Management</h5>
+</div>
+<div class="card-toolbar">
+<input class="form-control" onkeyup="searchOrders(this.value)" placeholder="Search orders..." type="text"/>
+<select class="form-select" onchange="filterOrders(this.value)">
+<option value="all">All</option>
+<option value="pending">Pending</option>
+<option value="confirmed">Confirmed</option>
+<option value="preparing">Preparing</option>
+<option value="delivered">Delivered</option>
+<option value="cancelled">Cancelled</option>
+</select>
+</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Plan</th>
+<th>Meal</th>
+<th>Date</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="orders-table-body"></tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Messages Section -->
+<section class="dashboard-section" id="section-messages" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header">
+<h5 class="card-title mb-0">Customer Messages</h5>
+</div>
+<div class="messages-container" id="messages-list"></div>
+</div>
+</section>
+<!-- Subscriptions Section -->
+<section class="dashboard-section" id="section-subscriptions" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Subscription Management</h5>
+</div>
+<div class="card-toolbar">
+<div class="filter-buttons">
+<button class="btn btn-sm btn-primary" onclick="filterSubscriptions('all', this)">All</button>
+<button class="btn btn-sm btn-outline-success" onclick="filterSubscriptions('active', this)">Active</button>
+<button class="btn btn-sm btn-outline-warning" onclick="filterSubscriptions('paused', this)">Paused</button>
+<button class="btn btn-sm btn-outline-danger" onclick="filterSubscriptions('cancelled', this)">Cancelled</button>
+</div>
+</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Customer</th>
+<th>Plan</th>
+<th>Price</th>
+<th>Status</th>
+<th>Renewal Date</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="subscriptions-table-body"></tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Profile Section -->
+<section class="dashboard-section" id="section-profile" style="display:none;">
+<div class="dashboard-card">
+<div class="profile-section text-center">
+<img alt="Admin" class="profile-image" src="https://ui-avatars.com/api/?name=Admin+User&amp;background=e74c3c&amp;color=fff&amp;size=120"/>
+<h4 class="profile-name">Admin User</h4>
+<p class="profile-email">admin@tiffinbox.com</p>
+<span class="badge bg-danger">Administrator</span>
+</div>
+</div>
+<div class="dashboard-card mt-4">
+<div class="card-header">
+<h5 class="card-title mb-0">Admin Information</h5>
+</div>
+<form class="admin-info-form">
+<div class="form-group">
+<label>Name</label>
+<input class="form-control" readonly="" type="text" value="Admin User"/>
+</div>
+<div class="form-group">
+<label>Email</label>
+<input class="form-control" readonly="" type="email" value="admin@tiffinbox.com"/>
+</div>
+<div class="form-group">
+<label>Phone</label>
+<input class="form-control" readonly="" type="text" value="+91 98765 43210"/>
+</div>
+<div class="form-group">
+<label>Role</label>
+<input class="form-control" readonly="" type="text" value="Administrator"/>
+</div>
+<div class="form-group">
+<label>Member Since</label>
+<input class="form-control" readonly="" type="text" value="January 2024"/>
+</div>
+<div class="form-group">
+<label>Account Status</label>
+<input class="form-control" readonly="" type="text" value="Active"/>
+</div>
+</form>
+</div>
+</section>
+<!-- Settings Section -->
+<section class="dashboard-section" id="section-settings" style="display:none;">
+<!-- Appearance -->
+<div class="dashboard-card">
+<div class="card-header">
+<h5 class="card-title mb-0"><i class="fas fa-palette me-2"></i>Appearance</h5>
+</div>
+<div class="settings-group">
+<div class="setting-item">
+<div class="setting-info">
+<h6>Dark Mode</h6>
+<p>Toggle dark mode for the dashboard</p>
+</div>
+<label class="toggle-switch">
+<input id="dark-mode-toggle" type="checkbox" onchange="toggleTheme()"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="setting-item">
+<div class="setting-info">
+<h6>RTL Layout</h6>
+<p>Enable right-to-left layout direction</p>
+</div>
+<label class="toggle-switch">
+<input id="rtl-toggle-cb" type="checkbox" onchange="toggleRTL()"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Notifications -->
+<div class="dashboard-card mt-4">
+<div class="card-header">
+<h5 class="card-title mb-0"><i class="fas fa-bell me-2"></i>Notifications</h5>
+</div>
+<div class="settings-group">
+<div class="setting-item">
+<div class="setting-info">
+<h6>Email Alerts</h6>
+<p>Receive email notifications for important updates</p>
+</div>
+<label class="toggle-switch">
+<input checked="" id="email-alerts-toggle" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="setting-item">
+<div class="setting-info">
+<h6>Order Updates</h6>
+<p>Get notified about order status changes</p>
+</div>
+<label class="toggle-switch">
+<input checked="" id="order-updates-toggle" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="setting-item">
+<div class="setting-info">
+<h6>System Alerts</h6>
+<p>Receive system-level alerts and warnings</p>
+</div>
+<label class="toggle-switch">
+<input checked="" id="system-alerts-toggle" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+</section>
+
+<section class="dashboard-section" id="section-meals" style="display:none;">
+<div class="d-flex justify-content-between align-items-center mb-4">
+<h5 class="card-title m-0">Meal Plans &amp; Menu Management</h5>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMealModal"><i class="fas fa-plus"></i> Add Meal</button>
+</div>
+<div class="row" id="admin-meals-grid">
+<!-- Rendered by JS -->
+</div>
+</section>
+
+<!-- Add Meal Modal -->
+<div class="modal fade" id="addMealModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background: var(--bg-primary); border: 1px solid var(--border-color);">
+      <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+        <h5 class="modal-title">Add New Meal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(var(--invert-icon, 0));"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addMealForm">
+          <div class="mb-3">
+            <label class="form-label text-secondary">Meal Name</label>
+            <input type="text" class="form-control" id="mealName" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-secondary">Category</label>
+            <select class="form-select" id="mealCategory" required>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Non-Vegetarian">Non-Vegetarian</option>
+              <option value="Diet Plan">Diet Plan</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-secondary">Status</label>
+            <select class="form-select" id="mealStatus" required>
+              <option value="Available">Available</option>
+              <option value="Low Stock">Low Stock</option>
+              <option value="Out of Stock">Out of Stock</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-secondary">Image Asset Path</label>
+            <input type="text" class="form-control" id="mealImg" placeholder="assets/images/menu/your-image.jpg" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid var(--border-color);">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="handleAddMeal()">Save Meal</button>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="dashboard-section" id="section-deliveries" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Today's Delivery Overview</h5>
+</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Delivery Area</th>
+<th>Meal Type</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="deliveries-table-body">
+<!-- Rendered by JS -->
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="dashboard-section" id="section-payments" style="display:none;">
+<div class="dashboard-card">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0">Payments &amp; Revenue</h5>
+</div>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Transaction ID</th>
+<th>Customer</th>
+<th>Date</th>
+<th>Method</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody id="payments-table-body">
+<!-- Rendered by JS -->
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="dashboard-section" id="section-reports" style="display:none;">
+<div class="dashboard-card text-center py-5">
+<i class="fas fa-chart-pie text-muted" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+<h5>Custom Reports Generation</h5>
+<p class="text-secondary">Export detailed business analytics and tax reports.</p>
+<button class="btn btn-primary mt-3" onclick="generateCSVReport()"><i class="fas fa-download"></i> Generate CSV Report</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+
+<!-- Customer View Modal -->
+<div class="modal fade" id="customerViewModal" tabindex="-1" aria-labelledby="customerViewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content dashboard-card border-0">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title" id="customerViewModalLabel">Customer Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pt-4" id="customerViewModalBody">
+        <!-- Content injected via JS -->
+      </div>
+      <div class="modal-footer border-top-0 justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-dashboard.js"></script>
+</body>
+</html>

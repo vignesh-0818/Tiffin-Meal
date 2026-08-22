@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TiffinBox - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-utensils"></i> TiffinBox</a>
+            <button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar"
+                tabindex="-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"
+                        style="font-family:'Playfair Display', serif; color:var(--primary); font-weight:700; font-size:1.6rem;">
+                        <i class="fas fa-utensils"></i> TiffinBox</h5>
+                    <button aria-label="Close" class="btn-close" type="button"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item dropdown home-dropdown">
+                            <a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"
+                                href="#" role="button">Home</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Sample Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
+                        <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i
+                                class="fas fa-moon"></i></button>
+                        <button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i
+                                class="fas fa-align-right"></i></button>
+                        <a class="btn nav-login-btn" href="customer-login.html">Login</a>
+                        <a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section"
+        style="background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1920&amp;h=1080&amp;fit=crop');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-lg-10 col-md-12 fade-in d-flex flex-column align-items-center">
+                    <h1>Authentic Home-Cooked Meals Delivered Daily</h1>
+                    <p>Savor the taste of home with fresh, wholesome Indian meals prepared with love and delivered right
+                        to your doorstep. From tangy curries to fluffy rotis, every meal is a celebration of flavors.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap justify-content-center mb-3">
+                        <a class="btn btn-primary-custom btn-lg" href="menu.html"><i
+                                class="fas fa-utensils me-2"></i>View Our Menu</a>
+                        <a class="btn btn-outline-custom btn-lg" href="how-it-works.html"><i
+                                class="fas fa-play-circle me-2"></i>How It Works</a>
+                    </div>
+                    <div class="d-inline-flex align-items-center gap-2"
+                        style="background:rgba(0,0,0,0.5);border-radius:30px;padding:0.5rem 1.2rem;color:#fff;font-size:0.9rem;">
+                        <i class="fas fa-fire" style="color:var(--secondary);"></i>
+                        <span>Plans starting from <strong>₹99/day</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= STATS BAR ================= -->
+    <section class="section-padding" style="background:var(--bg-secondary);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Menu Items</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Cities</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Rating <i class="fas fa-star"
+                                style="color:var(--accent);font-size:0.85rem;"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= POPULAR MEALS ================= -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title">Popular This Week</h2>
+                <p class="section-subtitle">Discover our most loved home-cooked meals</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <a class="meal-preview-card d-block" href="menu.html?day=monday">
+                        <img alt="Healthy Meal" src="assets/images/menu/paneer-tikka-masala-roti.png" />
+                        <div class="meal-overlay">
+                            <div class="meal-day">Monday</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <a class="meal-preview-card d-block" href="menu.html?day=tuesday">
+                        <img alt="Vegetable Plate" src="assets/images/menu/dal-makhani-jeera-rice.png" />
+                        <div class="meal-overlay">
+                            <div class="meal-day">Tuesday</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <a class="meal-preview-card d-block" href="menu.html?day=wednesday">
+                        <img alt="South Indian" src="assets/images/menu/south-indian-sambar-rice.png" />
+                        <div class="meal-overlay">
+                            <div class="meal-day">Wednesday</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <a class="meal-preview-card d-block" href="menu.html?day=thursday">
+                        <img alt="Indian Curry" src="assets/images/menu/chicken-biryani-raita.png" />
+                        <div class="meal-overlay">
+                            <div class="meal-day">Thursday</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <a class="meal-preview-card d-block" href="menu.html?day=friday">
+                        <img alt="Butter Chicken" src="assets/images/menu/butter-chicken-naan.png" />
+                        <div class="meal-overlay">
+                            <div class="meal-day">Friday</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in">
+                    <a class="meal-preview-card d-block" href="menu.html?day=saturday">
+                        <img alt="Thali" src="assets/images/menu/special-veg-thali.png" />
+                        <div class="meal-overlay">
+                            <div class="meal-day">Saturday</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-5 fade-in">
+                <a class="btn btn-primary-custom btn-lg" href="menu.html">View Full Menu <i
+                        class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= SUBSCRIPTION BENEFITS ================= -->
+    <section class="section-padding" style="background:var(--bg-secondary);">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title">Why Choose TiffinBox?</h2>
+                <p class="section-subtitle">Fresh meals, delivered to your door</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-utensils"></i></div>
+                        <h4>Fresh Daily</h4>
+                        <p style="color:var(--text-secondary);">Every meal is freshly cooked on the same day using
+                            locally sourced ingredients and delivered hot to your doorstep.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-truck"></i></div>
+                        <h4>Fast Delivery</h4>
+                        <p style="color:var(--text-secondary);">Lightning-fast delivery within your chosen time slot.
+                            Your meal arrives fresh, hot, and right on schedule.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-heart"></i></div>
+                        <h4>Made with Love</h4>
+                        <p style="color:var(--text-secondary);">Our experienced home chefs pour their heart into every
+                            dish, bringing the warmth and comfort of home-cooked food.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <h4>Flexible Plans</h4>
+                        <p style="color:var(--text-secondary);">Choose from daily, weekly, or monthly subscriptions.
+                            Pause, skip, or cancel anytime without any hassle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= HOW IT WORKS MINI ================= -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Getting delicious meals is as easy as 1-2-3</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 fade-in">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div
+                            style="width:70px;height:70px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.5rem;color:var(--primary);">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <h4>Choose Your Plan</h4>
+                        <p style="color:var(--text-secondary);">Pick from our curated meal plans - Veg, Non-Veg, or
+                            Combo. Select the number of meals per day that suits your appetite.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div
+                            style="width:70px;height:70px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.5rem;color:var(--primary);">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h4>Select Your Meals</h4>
+                        <p style="color:var(--text-secondary);">Browse our weekly menu and pick your favorites. Swap
+                            dishes anytime or go with our chef's daily specials.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div
+                            style="width:70px;height:70px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.5rem;color:var(--primary);">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h4>Enjoy Fresh Delivery</h4>
+                        <p style="color:var(--text-secondary);">Sit back and enjoy hot, freshly cooked meals delivered
+                            right to your door. No cooking, no cleaning, just pure deliciousness.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 fade-in">
+                <a class="btn btn-outline-custom btn-lg" href="how-it-works.html">Learn More <i
+                        class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="section-padding" style="background:var(--bg-secondary);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 fade-in">
+                    <h2 class="section-title" style="text-align:left;padding-bottom:0.5rem;">Why Families Trust
+                        TiffinBox</h2>
+                    <div class="choose-card">
+                        <div class="icon"><i class="fas fa-leaf"></i></div>
+                        <div>
+                            <h5 style="margin-bottom:0.25rem;">100% Natural Ingredients</h5>
+                            <p style="color:var(--text-secondary);margin-bottom:0;font-size:0.95rem;">No preservatives,
+                                no artificial colors. We use only fresh, natural ingredients sourced from trusted local
+                                farms.</p>
+                        </div>
+                    </div>
+                    <div class="choose-card">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h5 style="margin-bottom:0.25rem;">FSSAI Certified Kitchen</h5>
+                            <p style="color:var(--text-secondary);margin-bottom:0;font-size:0.95rem;">Our kitchen
+                                follows strict hygiene standards with regular quality checks and temperature-controlled
+                                storage.</p>
+                        </div>
+                    </div>
+                    <div class="choose-card">
+                        <div class="icon"><i class="fas fa-rupee-sign"></i></div>
+                        <div>
+                            <h5 style="margin-bottom:0.25rem;">Affordable Pricing</h5>
+                            <p style="color:var(--text-secondary);margin-bottom:0;font-size:0.95rem;">Quality
+                                home-cooked meals starting at just ₹99/day. No hidden charges, no delivery fees.</p>
+                        </div>
+                    </div>
+                    <div class="choose-card">
+                        <div class="icon"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h5 style="margin-bottom:0.25rem;">24/7 Customer Support</h5>
+                            <p style="color:var(--text-secondary);margin-bottom:0;font-size:0.95rem;">Have a query or
+                                special dietary request? Our friendly support team is always here to help you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <img alt="Indian Thali" class="img-fluid"
+                        src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&amp;h=600&amp;fit=crop"
+                        style="border-radius:16px;box-shadow:var(--card-hover-shadow);" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Hear from thousands of happy TiffinBox subscribers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 fade-in">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"TiffinBox has completely transformed my lunch routine. The food
+                            tastes exactly like home-cooked meals. The paneer dishes are absolutely divine!"</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img alt="Priya Sharma" class="testimonial-avatar rounded-circle border border-2 shadow-sm"
+                                src="assets/images/testimonials/priya_sharma.jpg"
+                                style="width: 50px; height: 50px; object-fit: cover;" />
+                            <div>
+                                <div class="testimonial-author">Priya Sharma</div>
+                                <small style="color:var(--text-muted);">Software Engineer, Delhi</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"As a bachelor, cooking was a daily struggle. TiffinBox gave me the
+                            variety and nutrition I needed. The weekly menu changes keep things exciting!"</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img alt="Rahul Kumar" class="testimonial-avatar rounded-circle border border-2 shadow-sm"
+                                src="assets/images/testimonials/rahul_kumar.jpg"
+                                style="width: 50px; height: 50px; object-fit: cover;" />
+                            <div>
+                                <div class="testimonial-author">Rahul Kumar</div>
+                                <small style="color:var(--text-muted);">Marketing Manager, Mumbai</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 fade-in">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"Best decision for our family! The kids love the food and I love the
+                            convenience. Delivery is always punctual and the packaging is eco-friendly too."</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <img alt="Anita Desai" class="testimonial-avatar rounded-circle border border-2 shadow-sm"
+                                src="assets/images/testimonials/anita_desai.jpg"
+                                style="width: 50px; height: 50px; object-fit: cover;" />
+                            <div>
+                                <div class="testimonial-author">Anita Desai</div>
+                                <small style="color:var(--text-muted);">Homemaker, Bangalore</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= WEEKLY MEAL PREVIEW ================= -->
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="py-4 py-md-5 cta-light-bg" style="color:#24302A;text-align:center;">
+        <div class="container fade-in">
+            <h2 class="fs-3" style="color:#24302A;margin-bottom:1rem;">Ready to Experience Fresh Meals?</h2>
+            <p
+                style="color:rgba(36,48,42,0.9);font-size:1.15rem;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;">
+                Subscribe now and get 20% off your first week! Taste the difference of real home-cooked food delivered
+                daily.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a class="btn btn-lg" href="menu.html"
+                    style="border:2px solid #24302A;color:#24302A;font-weight:600;border-radius:25px;padding:0.7rem 2rem;"><i
+                        class="fas fa-utensils me-2"></i>View Menu</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 style="color:#fff;"><i class="fas fa-envelope me-2"></i>Subscribe to Our Newsletter</h3>
+                    <p style="color:rgba(255,255,255,0.85);margin-bottom:0;">Get weekly menus, exclusive offers, and
+                        healthy eating tips delivered to your inbox!</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="d-flex newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input class="form-control" placeholder="Enter your email address" required="" type="email" />
+                        <button class="btn btn-primary-custom"
+                            style="border-radius:0 25px 25px 0;background:#fff;color:var(--primary);font-weight:600;border:none;"
+                            type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= FOOTER ================= -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-utensils"></i> TiffinBox</h5>
+                    <p>Delivering fresh, home-cooked meals to your doorstep. Authentic Indian cuisine made with love and
+                        the finest ingredients.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Sample Menu</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="plans.html">Plans</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Delhi, India</li>
+                        <li><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope me-2"></i> hello@tiffinbox.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe for weekly menus and exclusive offers!</p>
+                    <form class="d-flex" onsubmit="handleNewsletter(event)">
+                        <input class="form-control" placeholder="Your email" required=""
+                            style="border-radius:25px 0 0 25px;" type="email" />
+                        <button class="btn btn-primary" style="border-radius:0 25px 25px 0;"
+                            type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span class="current-year"></span> TiffinBox. All rights reserved. <a
+                        href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Close mobile navbar on link click
+        document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.getElementById('navbarNav');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

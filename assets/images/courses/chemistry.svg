@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f2ff"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset=".6" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity=".5">
+    <circle cx="110" cy="70" r="130" fill="#ede9fe"/>
+    <circle cx="720" cy="400" r="150" fill="#cffafe"/>
+  </g>
+  <g transform="translate(360 130)">
+    <path d="M-70 -120h140l80 120v20H-150v-20Z" fill="#fff" stroke="#e9e4fa" stroke-width="3"/>
+    <path d="M-150 -50h220" stroke="#7c3aed" stroke-width="4"/>
+    <circle cx="-70" cy="110" r="34" fill="none" stroke="#c4b5fd" stroke-width="3"/>
+    <path d="M-70 110c20-10 30-30 26-56" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="-46" cy="70" r="7" fill="url(#gold)"/>
+    <path d="M60 -120h40v100h-40Z" fill="#f5f3ff" stroke="#e9e4fa" stroke-width="3"/>
+    <path d="M60 -20l30 40 30-40Z" fill="#ede9fe" stroke="#e9e4fa" stroke-width="3"/>
+  </g>
+  <g transform="translate(80 280)">
+    <circle r="36" fill="#fff" stroke="#e9e4fa" stroke-width="2.5"/>
+    <circle r="36" fill="none" stroke="url(#teal)" stroke-width="3" stroke-dasharray="4 5" opacity=".8"/>
+    <path d="M-10 0a10 10 0 0 1 20 0a10 10 0 0 1-20 0" fill="none" stroke="#0d9488" stroke-width="3"/>
+    <circle cx="0" cy="0" r="4" fill="#0d9488"/>
+  </g>
+  <g transform="translate(600 100)">
+    <rect width="130" height="90" rx="18" fill="#fff" stroke="#e9e4fa" stroke-width="2.5"/>
+    <rect x="22" y="22" width="86" height="10" rx="5" fill="#ede9fe"/>
+    <rect x="22" y="46" width="60" height="10" rx="5" fill="#e9e4fa"/>
+    <circle cx="96" cy="66" r="8" fill="#cffafe"/>
+  </g>
+</svg>

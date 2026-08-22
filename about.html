@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - About Us</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body class="about-page">
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html"><i class="fas fa-utensils"></i> TiffinBox</a>
+<button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family:'Playfair Display', serif; color:var(--primary); font-weight:700; font-size:1.6rem;"><i class="fas fa-utensils"></i> TiffinBox</h5>
+<button aria-label="Close" class="btn-close" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+<li class="nav-item dropdown home-dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="index.html">Home 1</a></li>
+<li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+
+<li class="nav-item"><a class="nav-link" href="menu.html">Sample Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
+<button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<a class="btn nav-login-btn" href="customer-login.html">Login</a>
+<a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero-inner" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1920&amp;h=800&amp;fit=crop');">
+<div class="overlay"></div>
+<div class="container position-relative text-center" style="z-index:2;">
+<h1 class="display-4 fw-bold text-white mb-0">About</h1>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-5">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-6">
+<h2 class="display-6 fw-bold mb-4" style="font-family:'Playfair Display',serif;">Our Story</h2>
+<p class="text-muted mb-3">TiffinBox was born in 2019 from a simple observation: thousands of working professionals, students, and families in Delhi were struggling to find affordable, nutritious, and home-style meals every single day.</p>
+<p class="text-muted mb-3">It all started in a small kitchen in Lajpat Nagar with just 5 tiffins a day. Our founder, Arjun Mehta, noticed his colleagues skipping meals or relying on unhealthy fast food because they had no time to cook and no one to turn to for simple, wholesome food.</p>
+<p class="text-muted mb-3">Drawing inspiration from his mother's kitchen, Arjun began preparing homestyle meals with fresh ingredients and delivering them personally on his scooter. Word spread quickly. Within three months, we were serving 50 customers daily.</p>
+<p class="text-muted mb-4">Today, TiffinBox operates multiple kitchens across Delhi NCR, serving over 2,000 satisfied customers every day. But our promise remains the same: every meal should taste like it was made by someone who cares.</p>
+<div class="d-flex gap-4">
+<div class="text-center">
+<h3 class="fw-bold text-success mb-0">2000+</h3>
+<small class="text-muted">Daily Meals</small>
+</div>
+<div class="text-center">
+<h3 class="fw-bold text-success mb-0">50,000+</h3>
+<small class="text-muted">Happy Customers</small>
+</div>
+<div class="text-center">
+<h3 class="fw-bold text-success mb-0">6</h3>
+<small class="text-muted">Years Serving</small>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<img alt="TiffinBox kitchen" class="img-fluid rounded-4 shadow" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&amp;h=600&amp;fit=crop"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Mission Section -->
+<section class="py-5" style="background: var(--bg-secondary, #f8f9fa);">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-6 order-lg-1">
+<img alt="Our mission" class="img-fluid rounded-4 shadow" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;h=600&amp;fit=crop"/>
+</div>
+<div class="col-lg-6 order-lg-2">
+<h2 class="display-6 fw-bold mb-4" style="font-family:'Playfair Display',serif;">Our Mission</h2>
+<p class="text-muted mb-3">We believe that no one should have to choose between a busy schedule and a healthy meal. Our mission is to make nutritious, home-style food accessible to everyone at an affordable price.</p>
+<p class="text-muted mb-3">We work directly with local farmers and vendors to source the freshest ingredients. Our kitchens follow strict hygiene protocols, and our menu is crafted by experienced home chefs who understand the importance of balanced nutrition.</p>
+<p class="text-muted mb-4">From sourcing to delivery, every step in our process is designed with care. We use eco-friendly packaging, maintain temperature-controlled delivery, and ensure every tiffin reaches you within 30 minutes of preparation.</p>
+<div class="d-flex align-items-center gap-3">
+<div class="rounded-circle bg-success d-flex align-items-center justify-content-center" style="width:50px;height:50px;flex-shrink:0;">
+<i class="fas fa-bullseye text-white"></i>
+</div>
+<p class="fw-semibold mb-0" style="font-family:'Playfair Display',serif;">"Nourishing lives, one tiffin at a time."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-5">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="display-6 fw-bold" style="font-family:'Playfair Display',serif;">What We Stand For</h2>
+<p class="text-muted">The values that guide everything we do</p>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-lg-3">
+<div class="feature-card text-center p-4 rounded-4 h-100">
+<div class="rounded-circle bg-success bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
+<i class="fas fa-leaf fa-2x text-success"></i>
+</div>
+<h5 class="fw-bold">Freshness</h5>
+<p class="text-muted mb-0">Every meal is prepared fresh each morning using locally sourced ingredients. We never compromise on freshness.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3">
+<div class="feature-card text-center p-4 rounded-4 h-100">
+<div class="rounded-circle bg-success bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
+<i class="fas fa-award fa-2x text-success"></i>
+</div>
+<h5 class="fw-bold">Quality</h5>
+<p class="text-muted mb-0">FSSAI certified kitchens, regular quality checks, and experienced home chefs ensure the highest quality meals.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3">
+<div class="feature-card text-center p-4 rounded-4 h-100">
+<div class="rounded-circle bg-success bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
+<i class="fas fa-rupee-sign fa-2x text-success"></i>
+</div>
+<h5 class="fw-bold">Affordability</h5>
+<p class="text-muted mb-0">Wholesome meals starting at just ₹99. We prove that healthy eating doesn't have to burn a hole in your pocket.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3">
+<div class="feature-card text-center p-4 rounded-4 h-100">
+<div class="rounded-circle bg-success bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
+<i class="fas fa-hands-helping fa-2x text-success"></i>
+</div>
+<h5 class="fw-bold">Community</h5>
+<p class="text-muted mb-0">We employ local talent, support nearby farmers, and give back through our community meal programs every weekend.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-5" style="background: var(--bg-secondary, #f8f9fa);">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="display-6 fw-bold" style="font-family:'Playfair Display',serif;">Meet Our Team</h2>
+<p class="text-muted">The passionate people behind your daily meals</p>
+</div>
+<div class="row g-4 justify-content-center">
+<div class="col-md-6 col-lg-4">
+<div class="feature-card text-center rounded-4 overflow-hidden h-100">
+<img alt="Arjun Mehta" class="img-fluid w-100" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&amp;h=400&amp;fit=crop" style="height:300px;object-fit:cover;"/>
+<div class="p-4">
+<h5 class="fw-bold mb-1">Arjun Mehta</h5>
+<p class="text-success mb-3">Founder &amp; CEO</p>
+<p class="text-muted mb-3" style="font-size:0.9rem;">Former software engineer who left his corporate job to pursue his passion for food. Arjun still tastes every new dish before it goes on the menu.</p>
+<div class="d-flex justify-content-center gap-3">
+<a class="text-muted" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a class="text-muted" href="#"><i class="fab fa-twitter"></i></a>
+<a class="text-muted" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="feature-card text-center rounded-4 overflow-hidden h-100">
+<img alt="Priya Sharma" class="img-fluid w-100" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&amp;h=400&amp;fit=crop" style="height:300px;object-fit:cover;"/>
+<div class="p-4">
+<h5 class="fw-bold mb-1">Priya Sharma</h5>
+<p class="text-success mb-3">Head Chef</p>
+<p class="text-muted mb-3" style="font-size:0.9rem;">With 15 years of experience in traditional Indian cooking, Priya brings the authentic flavors of home kitchens to every tiffin we prepare.</p>
+<div class="d-flex justify-content-center gap-3">
+<a class="text-muted" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a class="text-muted" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a class="text-muted" href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="feature-card text-center rounded-4 overflow-hidden h-100">
+<img alt="Rahul Verma" class="img-fluid w-100" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&amp;h=400&amp;fit=crop" style="height:300px;object-fit:cover;"/>
+<div class="p-4">
+<h5 class="fw-bold mb-1">Rahul Verma</h5>
+<p class="text-success mb-3">Operations Manager</p>
+<p class="text-muted mb-3" style="font-size:0.9rem;">The logistics wizard behind our 30-minute delivery promise. Rahul ensures every tiffin reaches you hot and on time, every single day.</p>
+<div class="d-flex justify-content-center gap-3">
+<a class="text-muted" href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a class="text-muted" href="#"><i class="fab fa-twitter"></i></a>
+<a class="text-muted" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-5" style="background: var(--accent-color, #198754);">
+<div class="container text-center">
+<h2 class="display-6 fw-bold text-white mb-3" style="font-family:'Playfair Display',serif;">Ready to Taste the Difference?</h2>
+<p class="text-white-50 mb-4">Join thousands of happy customers who enjoy fresh, home-style meals delivered daily.</p>
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+<a class="btn btn-light btn-lg px-4" href="menu.html">View Sample Menu</a>
+<a class="btn btn-outline-light btn-lg px-4" href="pricing.html">Explore Plans</a>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-6 text-center">
+<h4 class="fw-bold mb-2" style="font-family:'Playfair Display',serif;">Stay Updated</h4>
+<p class="text-muted mb-3">Get weekly menus, offers, and nutrition tips delivered to your inbox.</p>
+<form class="d-flex gap-2">
+<input class="form-control" placeholder="Your email address" type="email"/>
+<button class="btn btn-success px-4" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4">
+<h5><i class="fas fa-utensils"></i> TiffinBox</h5>
+<p>Delivering fresh, home-cooked meals to your doorstep. Authentic Indian cuisine made with love and the finest ingredients.</p>
+<div class="footer-social">
+<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 mb-4">
+<h5>Quick Links</h5>
+<ul class="footer-links">
+<li><a href="about.html">About Us</a></li>
+<li><a href="menu.html">Sample Menu</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="plans.html">Plans</a></li>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Contact</h5>
+<ul class="footer-links">
+<li><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Delhi, India</li>
+<li><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+<li><i class="fas fa-envelope me-2"></i> hello@tiffinbox.com</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Newsletter</h5>
+<p>Subscribe for weekly menus and exclusive offers!</p>
+<form class="d-flex" onsubmit="handleNewsletter(event)">
+<input class="form-control" placeholder="Your email" required="" style="border-radius:25px 0 0 25px;" type="email"/>
+<button class="btn btn-primary" style="border-radius:0 25px 25px 0;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span class="current-year"></span> TiffinBox. All rights reserved. <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Service</a></p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

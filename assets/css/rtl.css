@@ -1,0 +1,109 @@
+/* ==========================================================================
+   LearnSphere — RTL Support
+   Scoped to html[dir="rtl"]
+   Base styles use logical properties, so this layer only fixes
+   directional icons and any physical-property leftovers.
+   ========================================================================== */
+
+html[dir="rtl"] body { direction: rtl; text-align: right; }
+
+html[dir="rtl"] .text-start, html[dir="rtl"] [dir="rtl"] .text-start { text-align: right !important; }
+html[dir="rtl"] .text-end, html[dir="rtl"] [dir="rtl"] .text-end { text-align: left !important; }
+
+/* bootstrap grid alignment is auto-mirrored by dir */
+
+/* ---- navbar ---- */
+html[dir="rtl"] .navbar .nav-link::after { transform-origin: right; }
+html[dir="rtl"] .navbar .dropdown-menu { text-align: right; }
+html[dir="rtl"] .offcanvas .dropdown-menu { border-inline-start: 0; border-inline-end: 2px solid var(--sp-primary-100); margin-inline-start: 0; margin-inline-end: 0.6rem; }
+
+/* ---- directional icons ---- */
+html[dir="rtl"] .bi-arrow-right,
+html[dir="rtl"] .bi-arrow-right-circle,
+html[dir="rtl"] .link-arrow .bi,
+html[dir="rtl"] .course-card .course-link .bi,
+html[dir="rtl"] .footer-links a .bi,
+html[dir="rtl"] .breadcrumb .breadcrumb-item:first-child a .bi,
+html[dir="rtl"] .article-nav a:last-child .bi { transform: scaleX(-1); }
+
+html[dir="rtl"] .link-arrow:hover .bi { transform: scaleX(-1) translateX(-4px); }
+html[dir="rtl"] .course-card:hover .course-link .bi { transform: scaleX(-1) translateX(-4px); }
+
+/* ---- breadcrumb separator ---- */
+html[dir="rtl"] .breadcrumb { --bs-breadcrumb-divider: '‹'; }
+
+/* ---- accordion arrow ---- */
+html[dir="rtl"] .accordion-custom .accordion-button::after { margin-left: 0; margin-right: auto; }
+html[dir="rtl"] .accordion-custom .accordion-button:not(.collapsed)::after { transform: rotate(-180deg); }
+
+/* ---- pagination chevrons ---- */
+html[dir="rtl"] .pagination-custom .page-item:first-child .bi { transform: scaleX(-1); }
+html[dir="rtl"] .pagination-custom .page-item:last-child .bi { transform: scaleX(-1); }
+
+/* ---- swiper ---- */
+html[dir="rtl"] .swiper { direction: rtl; }
+html[dir="rtl"] .swiper-slide { direction: rtl; }
+
+/* ---- process connector direction ---- */
+html[dir="rtl"] .process-connector { transform: scaleX(-1); }
+html[dir="rtl"] .process-card:hover .process-connector { transform: scaleX(-1); }
+
+/* ---- timeline ---- */
+html[dir="rtl"] .timeline::before { left: auto; right: 23px; }
+html[dir="rtl"] .timeline .timeline-item { padding-left: 0; padding-right: 4rem; }
+html[dir="rtl"] .timeline .timeline-icon { left: auto; right: 0; }
+
+/* ---- newsletter / input group radius swap ---- */
+html[dir="rtl"] .newsletter-form .form-control { border-radius: 0 var(--r-pill) var(--r-pill) 0 !important; }
+html[dir="rtl"] .newsletter-form .btn { border-radius: var(--r-pill) 0 0 var(--r-pill) !important; }
+html[dir="rtl"] .footer-newsletter .input-group .form-control { padding-left: 3.2rem; padding-right: 1.2rem; }
+html[dir="rtl"] .footer-newsletter .input-group .btn { right: auto; left: 5px; }
+
+/* ---- article blockquote ---- */
+html[dir="rtl"] .article-body blockquote { border-left: 0; border-right: 4px solid var(--sp-primary); border-radius: var(--r-md) 0 0 var(--r-md); }
+html[dir="rtl"] .article-body blockquote .bi-quote { margin-right: 0; margin-left: 0.5rem; }
+
+/* ---- comment reply indent (logical in base; keep parity) ---- */
+html[dir="rtl"] .comment-item.reply { margin-left: 0; margin-right: 3.5rem; }
+
+/* ---- footer link hover (logical in base; keep parity) ---- */
+html[dir="rtl"] .footer-links a:hover { padding-left: 0; padding-right: 0.35rem; }
+
+/* ---- neutralise UA logical list padding in RTL ---- */
+html[dir="rtl"] .list-unstyled { padding-right: 0; }
+
+/* ---- auth side ---- */
+html[dir="rtl"] .auth-side { text-align: right; }
+
+/* ---- sidebar search (logical in base) ---- */
+html[dir="rtl"] .sidebar-search .form-control { padding-left: 3rem; padding-right: 1rem; }
+html[dir="rtl"] .sidebar-search .btn { right: auto; left: 4px; }
+
+/* ---- admin topbar search ---- */
+html[dir="rtl"] .admin-topbar .at-search .form-control { padding-left: 1rem; padding-right: 2.6rem; }
+html[dir="rtl"] .admin-topbar .at-search .bi { left: auto; right: 1rem; }
+
+/* ---- dash badges ---- */
+html[dir="rtl"] .dash-nav .dash-nav-badge { margin-left: 0; margin-right: auto; }
+
+/* ---- back to top ---- */
+html[dir="rtl"] .back-to-top { right: auto; left: 24px; }
+
+/* ---- chat bubbles (physical radii) ---- */
+html[dir="rtl"] .chat-bubble.in { border-bottom-left-radius: var(--r-lg); border-bottom-right-radius: 6px; }
+html[dir="rtl"] .chat-bubble.out { border-bottom-right-radius: var(--r-lg); border-bottom-left-radius: 6px; }
+
+/* ---- avatar group ---- */
+html[dir="rtl"] .avatar-group img, html[dir="rtl"] .avatar-group .avatar { margin-right: -10px; margin-left: 0; }
+html[dir="rtl"] .avatar-group img:first-child, html[dir="rtl"] .avatar-group .avatar:first-child { margin-right: 0; }
+
+/* ---- counters suffix ---- */
+html[dir="rtl"] .counter-card .counter-num .suffix { order: -1; }
+
+/* ---- table alignment ---- */
+html[dir="rtl"] .table-clean td, html[dir="rtl"] .table-clean th { text-align: right; }
+html[dir="rtl"] .table-compare td:first-child, html[dir="rtl"] .table-compare th:first-child { text-align: right; }
+
+/* ---- offcanvas end side = left in RTL ---- */
+html[dir="rtl"] .offcanvas-end { left: 0; right: auto; transform: translateX(-100%); }
+html[dir="rtl"] .offcanvas-end.show { transform: none; }

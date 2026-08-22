@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TiffinBox - Blog</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navbar -->
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+<div class="container">
+<a class="navbar-brand" href="index.html"><i class="fas fa-utensils"></i> TiffinBox</a>
+<button aria-controls="offcanvasNavbar" aria-label="Toggle navigation" class="navbar-toggler" type="button">
+<i class="fas fa-bars"></i>
+</button>
+<div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family:'Playfair Display', serif; color:var(--primary); font-weight:700; font-size:1.6rem;"><i class="fas fa-utensils"></i> TiffinBox</h5>
+<button aria-label="Close" class="btn-close" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+<li class="nav-item dropdown home-dropdown">
+<a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Home</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="index.html">Home 1</a></li>
+<li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+<li class="nav-item"><a class="nav-link" href="menu.html">Sample Menu</a></li>
+<li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
+<button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<a class="btn nav-login-btn" href="customer-login.html">Login</a>
+<a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu -->
+<!-- Hero -->
+<section class="hero-inner" style="background: url('assets/images/blog/blog-hero.jpg') center/cover no-repeat;">
+<div class="hero-overlay"></div>
+<div class="container position-relative text-center text-white" style="z-index: 2;">
+<h1 class="display-4 fw-bold mb-0" style="color:#FFFFFF; text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);">Blog</h1>
+</div>
+</section>
+<!-- Search & Filters -->
+<section class="py-5">
+<div class="container">
+<div class="row justify-content-center mb-4">
+<div class="col-lg-6">
+<div class="input-group">
+<span class="input-group-text bg-white border-end-0"><i class="fas fa-search text-muted"></i></span>
+<input class="form-control border-start-0" id="blog-search" onkeyup="handleBlogSearch(event)" placeholder="Search articles..." type="text"/>
+</div>
+</div>
+</div>
+<div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+<button class="btn blog-filter-btn active" onclick="filterBlog('all')">All</button>
+<button class="btn blog-filter-btn" onclick="filterBlog('Recipes')">Recipes</button>
+<button class="btn blog-filter-btn" onclick="filterBlog('Health')">Health</button>
+<button class="btn blog-filter-btn" onclick="filterBlog('Tips')">Tips</button>
+<button class="btn blog-filter-btn" onclick="filterBlog('Nutrition')">Nutrition</button>
+</div>
+<!-- Blog Grid -->
+<div class="row g-4" id="blog-grid">
+<!-- Card 1 -->
+<div class="col-lg-4 col-md-6 blog-card" data-category="Health" data-title="10 Benefits of Home-Cooked Tiffin Meals">
+<div class="card h-100 border-0 shadow-sm">
+<img alt="Home-Cooked Tiffin Meals" class="card-img-top" onclick="window.location.href='blog-details.html?id=1'" src="assets/images/blog/home-cooked-tiffin.jpg" style="height:240px;object-fit:cover;cursor:pointer"/>
+<div class="card-body d-flex flex-column">
+<span class="blog-category">Health</span>
+<h5 class="card-title mt-2" onclick="window.location.href='blog-details.html?id=1'" style="cursor:pointer">10 Benefits of Home-Cooked Tiffin Meals</h5>
+<div class="blog-meta my-2">
+<span><i class="fas fa-user me-1"></i>Arjun Mehta</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-calendar me-1"></i>Jan 15, 2024</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-clock me-1"></i>5 min</span>
+</div>
+<p class="card-text flex-grow-1">Discover why home-cooked tiffin meals are a healthier, more affordable, and more convenient alternative to restaurant food for everyday nutrition.</p>
+<a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="blog-details.html?id=1">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="col-lg-4 col-md-6 blog-card" data-category="Recipes" data-title="Top 5 Indian Breakfast Recipes for Busy Mornings">
+<div class="card h-100 border-0 shadow-sm">
+<img alt="Indian Breakfast Recipes" class="card-img-top" onclick="window.location.href='blog-details.html?id=2'" src="assets/images/blog/indian-breakfast.jpg" style="height:240px;object-fit:cover;cursor:pointer"/>
+<div class="card-body d-flex flex-column">
+<span class="blog-category">Recipes</span>
+<h5 class="card-title mt-2" onclick="window.location.href='blog-details.html?id=2'" style="cursor:pointer">Top 5 Indian Breakfast Recipes for Busy Mornings</h5>
+<div class="blog-meta my-2">
+<span><i class="fas fa-user me-1"></i>Priya Sharma</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-calendar me-1"></i>Jan 12, 2024</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-clock me-1"></i>7 min</span>
+</div>
+<p class="card-text flex-grow-1">Start your day right with these quick and delicious Indian breakfast recipes that can be prepared in under 15 minutes for the whole family.</p>
+<a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="blog-details.html?id=2">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="col-lg-4 col-md-6 blog-card" data-category="Nutrition" data-title="Understanding Vegetarian Nutrition: A Complete Guide">
+<div class="card h-100 border-0 shadow-sm">
+<img alt="Vegetarian Nutrition" class="card-img-top" onclick="window.location.href='blog-details.html?id=3'" src="assets/images/blog/vegetarian-nutrition.jpg" style="height:240px;object-fit:cover;cursor:pointer"/>
+<div class="card-body d-flex flex-column">
+<span class="blog-category">Nutrition</span>
+<h5 class="card-title mt-2" onclick="window.location.href='blog-details.html?id=3'" style="cursor:pointer">Understanding Vegetarian Nutrition: A Complete Guide</h5>
+<div class="blog-meta my-2">
+<span><i class="fas fa-user me-1"></i>Dr. Meera Patel</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-calendar me-1"></i>Jan 10, 2024</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-clock me-1"></i>8 min</span>
+</div>
+<p class="card-text flex-grow-1">A comprehensive guide to getting all essential nutrients from a vegetarian diet, including protein sources, vitamins, and balanced meal planning.</p>
+<a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="blog-details.html?id=3">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="col-lg-4 col-md-6 blog-card" data-category="Tips" data-title="How to Choose the Right Meal Plan for Your Lifestyle">
+<div class="card h-100 border-0 shadow-sm">
+<img alt="Choose Meal Plan" class="card-img-top" onclick="window.location.href='blog-details.html?id=4'" src="assets/images/blog/meal-plan-guide.jpg" style="height:240px;object-fit:cover;cursor:pointer"/>
+<div class="card-body d-flex flex-column">
+<span class="blog-category">Tips</span>
+<h5 class="card-title mt-2" onclick="window.location.href='blog-details.html?id=4'" style="cursor:pointer">How to Choose the Right Meal Plan for Your Lifestyle</h5>
+<div class="blog-meta my-2">
+<span><i class="fas fa-user me-1"></i>Rahul Verma</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-calendar me-1"></i>Jan 8, 2024</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-clock me-1"></i>6 min</span>
+</div>
+<p class="card-text flex-grow-1">Not sure which tiffin plan suits you? Here is a practical guide to selecting the perfect meal plan based on your lifestyle, goals, and budget.</p>
+<a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="blog-details.html?id=4">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="col-lg-4 col-md-6 blog-card" data-category="Health" data-title="The Importance of Meal Timing for Better Health">
+<div class="card h-100 border-0 shadow-sm">
+<img alt="Meal Timing" class="card-img-top" onclick="window.location.href='blog-details.html?id=5'" src="assets/images/blog/meal-timing-health.jpg" style="height:240px;object-fit:cover;cursor:pointer"/>
+<div class="card-body d-flex flex-column">
+<span class="blog-category">Health</span>
+<h5 class="card-title mt-2" onclick="window.location.href='blog-details.html?id=5'" style="cursor:pointer">The Importance of Meal Timing for Better Health</h5>
+<div class="blog-meta my-2">
+<span><i class="fas fa-user me-1"></i>Dr. Meera Patel</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-calendar me-1"></i>Jan 5, 2024</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-clock me-1"></i>5 min</span>
+</div>
+<p class="card-text flex-grow-1">Learn why eating at the right times can boost your metabolism, improve digestion, and help you maintain a healthy weight effortlessly.</p>
+<a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="blog-details.html?id=5">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="col-lg-4 col-md-6 blog-card" data-category="Recipes" data-title="South Indian Meals: A Culinary Journey">
+<div class="card h-100 border-0 shadow-sm">
+<img alt="South Indian Meals" class="card-img-top" onclick="window.location.href='blog-details.html?id=6'" src="assets/images/blog/south-indian-cuisine.jpg" style="height:240px;object-fit:cover;cursor:pointer"/>
+<div class="card-body d-flex flex-column">
+<span class="blog-category">Recipes</span>
+<h5 class="card-title mt-2" onclick="window.location.href='blog-details.html?id=6'" style="cursor:pointer">South Indian Meals: A Culinary Journey</h5>
+<div class="blog-meta my-2">
+<span><i class="fas fa-user me-1"></i>Priya Sharma</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-calendar me-1"></i>Jan 3, 2024</span>
+<span class="mx-2">|</span>
+<span><i class="fas fa-clock me-1"></i>6 min</span>
+</div>
+<p class="card-text flex-grow-1">Explore the rich and diverse flavors of South Indian cuisine, from crispy dosas and fluffy idlis to aromatic sambar and tangy rasam.</p>
+<a class="btn btn-outline-primary btn-sm align-self-start mt-auto" href="blog-details.html?id=6">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-5 bg-primary text-white">
+<div class="container text-center">
+<h3 class="fw-bold mb-3">Subscribe to Our Newsletter</h3>
+<p class="mb-4">Get the latest recipes, health tips, and exclusive offers delivered to your inbox.</p>
+<div class="row justify-content-center">
+<div class="col-md-5">
+<div class="input-group">
+<input class="form-control" placeholder="Enter your email" type="email"/>
+<button class="btn btn-light text-primary fw-semibold" type="button">Subscribe</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 mb-4">
+<h5><i class="fas fa-utensils"></i> TiffinBox</h5>
+<p>Delivering fresh, home-cooked meals to your doorstep. Authentic Indian cuisine made with love and the finest ingredients.</p>
+<div class="footer-social">
+<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 mb-4">
+<h5>Quick Links</h5>
+<ul class="footer-links">
+<li><a href="about.html">About Us</a></li>
+<li><a href="menu.html">Sample Menu</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="plans.html">Plans</a></li>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Contact</h5>
+<ul class="footer-links">
+<li><i class="fas fa-map-marker-alt me-2"></i> 123 Food Street, Delhi, India</li>
+<li><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+<li><i class="fas fa-envelope me-2"></i> hello@tiffinbox.com</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 mb-4">
+<h5>Newsletter</h5>
+<p>Subscribe for weekly menus and exclusive offers!</p>
+<form class="d-flex" onsubmit="handleNewsletter(event)">
+<input class="form-control" placeholder="Your email" required="" style="border-radius:25px 0 0 25px;" type="email"/>
+<button class="btn btn-primary" style="border-radius:0 25px 25px 0;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span class="current-year"></span> TiffinBox. All rights reserved. <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Service</a></p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+const blogCards = document.querySelectorAll('.blog-card');
+
+function handleBlogSearch(e) {
+  const query = e.target.value.toLowerCase();
+  blogCards.forEach(card => {
+    const title = card.getAttribute('data-title').toLowerCase();
+    const category = card.getAttribute('data-category').toLowerCase();
+    card.style.display = (title.includes(query) || category.includes(query)) ? '' : 'none';
+  });
+}
+
+function filterBlog(cat) {
+  // We cannot use event.target directly if it's called from a button click that doesn't pass event.
+  // Instead, select the active button manually
+  document.querySelectorAll('.blog-filter-btn').forEach(btn => btn.classList.remove('active'));
+  const btns = Array.from(document.querySelectorAll('.blog-filter-btn'));
+  const targetBtn = btns.find(b => b.textContent.trim().toLowerCase() === cat.toLowerCase());
+  if (targetBtn) targetBtn.classList.add('active');
+  
+  blogCards.forEach(card => {
+    if (cat.toLowerCase() === 'all') {
+      card.style.display = '';
+    } else {
+      card.style.display = card.getAttribute('data-category').toLowerCase() === cat.toLowerCase() ? '' : 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
