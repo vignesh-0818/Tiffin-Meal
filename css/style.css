@@ -2785,22 +2785,24 @@ body.menu-open-custom {
 
 /* Mobile Fixes */
 @media (max-width: 768px) {
+    /* 1. Fix mobile menu buttons cut-off */
     .offcanvas-body .nav-actions .btn {
         flex: 1 1 45% !important;
     }
     
-    .main-navbar {
-        background-color: var(--primary) !important;
+    /* 2. Mobile navbar active green color */
+    .offcanvas-body .nav-link.active {
+        color: var(--primary) !important;
+        border-bottom: 1px solid var(--primary) !important;
     }
-    .main-navbar .navbar-brand {
-        color: #ffffff !important;
+    .offcanvas-body .dropdown-item.active {
+        color: var(--primary) !important;
+        background-color: var(--primary-light) !important;
     }
     
-    [data-theme="dark"] .main-navbar {
-        background-color: #1e2124 !important;
-    }
-    [data-theme="dark"] .navbar-toggler i, 
-    [data-theme="dark"] .navbar-toggler {
+    /* 3. Dark Mode RTL and Dark Mode button visibility */
+    [data-theme="dark"] .offcanvas-body .nav-actions .theme-toggle-btn,
+    [data-theme="dark"] .offcanvas-body .nav-actions .rtl-toggle-btn {
         color: #ffffff !important;
         border-color: rgba(255, 255, 255, 0.5) !important;
     }
