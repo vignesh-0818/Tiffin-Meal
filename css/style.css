@@ -316,7 +316,11 @@ body.rtl .home-dropdown .dropdown-menu {
     right: 0;
 }
 
-.home-dropdown:hover .dropdown-menu,
+@media (min-width: 992px) {
+    .home-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
 .home-dropdown .dropdown-menu.show {
     display: block;
 }
@@ -2805,6 +2809,48 @@ body.menu-open-custom {
     [data-theme="dark"] .offcanvas-body .nav-actions .rtl-toggle-btn {
         color: #ffffff !important;
         border-color: rgba(255, 255, 255, 0.5) !important;
+       /* 4. HOME PAGE DARK MODE MOBILE ONLY */
+    body.dark-mode:not([class*="-page"]) {
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+    }
+    
+    body.dark-mode:not([class*="-page"]) .section-padding {
+        background-color: var(--bg-primary) !important;
+    }
+    
+    body.dark-mode:not([class*="-page"]) .bg-light,
+    body.dark-mode:not([class*="-page"]) .cta-light-bg {
+        background-color: var(--bg-secondary) !important;
+    }
+
+    body.dark-mode:not([class*="-page"]) .feature-card,
+    body.dark-mode:not([class*="-page"]) .step-card,
+    body.dark-mode:not([class*="-page"]) .testimonial-card,
+    body.dark-mode:not([class*="-page"]) .meal-preview-card {
+        background-color: var(--bg-secondary) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-primary) !important;
+    }
+
+    body.dark-mode:not([class*="-page"]) .feature-card h4,
+    body.dark-mode:not([class*="-page"]) .step-card h4,
+    body.dark-mode:not([class*="-page"]) .section-title,
+    body.dark-mode:not([class*="-page"]) .section-subtitle,
+    body.dark-mode:not([class*="-page"]) .testimonial-text {
+        color: var(--text-primary) !important;
+    }
+
+    body.dark-mode:not([class*="-page"]) .feature-card p,
+    body.dark-mode:not([class*="-page"]) .step-card p {
+        color: var(--text-secondary) !important;
+    }
+
+    /* 5. MOBILE DARK MODE HAMBURGER / 3-LINE ICON */
+    body.dark-mode .navbar-toggler i.fas {
+        color: var(--text-primary) !important;
+    }
+    body.dark-mode .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5) !important;
     }
 }
-
