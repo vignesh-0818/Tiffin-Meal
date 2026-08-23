@@ -841,3 +841,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// ============================================
+// INLINE NEWSLETTER FORM (In-Page)
+// ============================================
+function handleInlineNewsletter(e) {
+    if (e) e.preventDefault();
+    const form = e.target || e;
+    const input = form.querySelector('input[type="email"]');
+    
+    let msg = form.nextElementSibling;
+    if (!msg || !msg.classList.contains('newsletter-msg')) {
+        msg = document.createElement('div');
+        msg.className = 'newsletter-msg mt-2 text-start';
+        msg.style.fontSize = '0.9rem';
+        msg.style.fontWeight = '500';
+        form.parentNode.insertBefore(msg, form.nextSibling);
+    }
+    
+    if (form.newsletterTimeout) {
+        clearTimeout(form.newsletterTimeout);
+    }
+    
+    msg.style.display = 'block';
+    const isDarkBg = form.closest('.bg-primary') !== null || form.closest('.newsletter-section') !== null;
+    const errorColor = isDarkBg ? '#ffc107' : '#dc3545';
+    const successColor = isDarkBg ? '#ffffff' : '#198754';
+    
+    if (!input || !input.value.trim()) {
+        msg.style.color = errorColor;
+        msg.textContent = 'Please enter your email address.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+        msg.style.color = errorColor;
+        msg.textContent = 'Please enter a valid email address.';
+    } else {
+        msg.style.color = successColor;
+        msg.textContent = 'Thank you for subscribing!';
+        input.value = '';
+    }
+    
+    form.newsletterTimeout = setTimeout(() => {
+        msg.style.display = 'none';
+    }, 5000);
+}

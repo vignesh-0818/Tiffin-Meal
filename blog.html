@@ -201,10 +201,10 @@
 <p class="mb-4">Get the latest recipes, health tips, and exclusive offers delivered to your inbox.</p>
 <div class="row justify-content-center">
 <div class="col-md-5">
-<div class="input-group">
+<form class="input-group" onsubmit="handleInlineNewsletter(event)">
 <input class="form-control" placeholder="Enter your email" type="email"/>
-<button class="btn btn-light text-primary fw-semibold" type="button">Subscribe</button>
-</div>
+<button class="btn btn-light text-primary fw-semibold" type="submit">Subscribe</button>
+</form>
 </div>
 </div>
 </div>
@@ -245,7 +245,7 @@
 <div class="col-lg-3 col-md-4 mb-4">
 <h5>Newsletter</h5>
 <p>Subscribe for weekly menus and exclusive offers!</p>
-<form class="d-flex" onsubmit="handleNewsletter(event)">
+<form class="d-flex" onsubmit="handleInlineNewsletter(event)">
 <input class="form-control" placeholder="Your email" required="" style="border-radius:25px 0 0 25px;" type="email"/>
 <button class="btn btn-primary" style="border-radius:0 25px 25px 0;" type="submit">Subscribe</button>
 </form>
