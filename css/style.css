@@ -1188,8 +1188,16 @@ body.rtl .newsletter-form .btn {
     margin-bottom: 1.5rem;
 }
 
+.main-footer .row > div:first-child h5 {
+    color: var(--primary) !important;
+}
+
 body.dark-mode .main-footer h5 {
     color: #ffffff;
+}
+
+body.dark-mode .main-footer .row > div:first-child h5 {
+    color: var(--primary) !important;
 }
 
 .main-footer a {

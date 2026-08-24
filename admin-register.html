@@ -234,7 +234,28 @@ body.dark-mode .auth-switch-btn:hover:not(.active) {
             <button class="btn btn-primary-custom w-100 py-2 mt-3 rounded-pill fw-bold" type="submit">Create Admin Account</button>
         </form>
 
-        <div class="mt-4 text-center">
+        <div class="d-flex align-items-center my-4">
+            <hr class="flex-grow-1" style="border-color: var(--border-color); opacity: 0.5;">
+            <span class="mx-3" style="color: var(--text-secondary); font-size: 0.9rem;">or continue with</span>
+            <hr class="flex-grow-1" style="border-color: var(--border-color); opacity: 0.5;">
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-6">
+                <button type="button" class="btn w-100 rounded-pill d-flex align-items-center justify-content-center gap-2" style="background: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-primary); transition: all 0.3s ease; padding: 0.6rem 1rem;" onclick="alert('Google authentication is not yet configured.')" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='var(--bg-primary)'">
+                    <i class="fab fa-google text-danger"></i>
+                    <span class="fw-semibold">Google</span>
+                </button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn w-100 rounded-pill d-flex align-items-center justify-content-center gap-2" style="background: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-primary); transition: all 0.3s ease; padding: 0.6rem 1rem;" onclick="alert('Apple authentication is not yet configured.')" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='var(--bg-primary)'">
+                    <i class="fab fa-apple" style="font-size: 1.1rem;"></i>
+                    <span class="fw-semibold">Apple</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="text-center">
             <span style="color:var(--text-secondary);">Already have an admin account?</span> <a href="admin-login.html" style="color:var(--primary);font-weight:600;text-decoration:none;">Login</a>
         </div>
     </div>
@@ -260,3 +281,4 @@ function togglePasswordVisibility(btn) {
 </script>
 </body>
 </html>
+
