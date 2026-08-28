@@ -823,12 +823,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    // Use event delegation for offcanvas close buttons
+    document.addEventListener('click', (e) => {
+        const closeBtn = e.target.closest('.offcanvas .btn-close');
+        if (closeBtn) {
             e.preventDefault();
             e.stopPropagation();
             closeAllMenus();
-        });
+        }
     });
 
     backdrop.addEventListener('click', () => {

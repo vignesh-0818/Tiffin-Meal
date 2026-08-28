@@ -55,8 +55,8 @@ function handleCustomerRegister(e) {
     // Validation
     if (!firstName) { showNotification('Please enter your first name.', 'error'); return; }
     if (!lastName) { showNotification('Please enter your last name.', 'error'); return; }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showNotification('Please enter a valid email.', 'error'); return; }
-    if (!phone || phone.length < 10) { showNotification('Please enter a valid phone number.', 'error'); return; }
+    if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) { showNotification('Please enter a valid email.', 'error'); return; }
+    if (!phone || !/^\d{10}$/.test(phone)) { showNotification('Please enter a valid phone number.', 'error'); return; }
     if (!address) { showNotification('Please enter your address.', 'error'); return; }
     if (!pincode || pincode.length !== 6) { showNotification('Please enter a valid 6-digit pincode.', 'error'); return; }
     if (!dietary) { showNotification('Please select your dietary preference.', 'error'); return; }
@@ -110,7 +110,7 @@ function handleCustomerLogin(e) {
     const password = form.querySelector('[name="password"]')?.value;
     const remember = form.querySelector('[name="remember"]')?.checked;
     
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
         showNotification('Please enter a valid email.', 'error');
         return;
     }
@@ -162,8 +162,8 @@ function handleAdminRegister(e) {
     const password = form.querySelector('[name="password"]')?.value;
     const confirmPassword = form.querySelector('[name="confirmPassword"]')?.value;
     if (!name) { showNotification('Please enter your name.', 'error'); return; }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showNotification('Please enter a valid email.', 'error'); return; }
-    if (!phone || phone.length < 10) { showNotification('Please enter a valid phone number.', 'error'); return; }
+    if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) { showNotification('Please enter a valid email.', 'error'); return; }
+    if (!phone || !/^\d{10}$/.test(phone)) { showNotification('Please enter a valid phone number.', 'error'); return; }
     if (!password || password.length < 6) { showNotification('Password must be at least 6 characters.', 'error'); return; }
     if (password !== confirmPassword) { showNotification('Passwords do not match.', 'error'); return; }
     
@@ -205,7 +205,7 @@ function handleAdminLogin(e) {
     const password = form.querySelector('[name="password"]')?.value;
     const remember = form.querySelector('[name="remember"]')?.checked;
     
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
         showNotification('Please enter a valid email.', 'error');
         return;
     }
@@ -405,7 +405,7 @@ function handleForgotPassword(e) {
         showNotification('Please enter your email address.', 'error');
         return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
         showNotification('Please enter a valid email address.', 'error');
         return;
     }

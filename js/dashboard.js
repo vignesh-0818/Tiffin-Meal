@@ -419,6 +419,10 @@ function saveProfile(e) {
     user.lastName = form.querySelector('[name="lastName"]')?.value.trim() || user.lastName;
     user.name = (user.firstName + ' ' + user.lastName).trim();
     user.phone = form.querySelector('[name="phone"]')?.value.trim() || user.phone;
+    if (form.querySelector('[name="phone"]') && !/^\d{10}$/.test(user.phone)) {
+        showNotification('Please enter a valid 10-digit phone number.', 'error');
+        return;
+    }
     user.address = form.querySelector('[name="address"]')?.value.trim() || user.address;
     user.pincode = form.querySelector('[name="pincode"]')?.value.trim() || user.pincode;
     user.dietaryPreference = form.querySelector('[name="dietary"]')?.value || user.dietaryPreference;

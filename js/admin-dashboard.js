@@ -567,7 +567,7 @@ function loadAdminMeals() {
     if (!meals) {
         meals = [
             { name: 'Vegetarian Thali', category: 'Vegetarian', orders: 124, status: 'Available', img: 'assets/images/menu/special-veg-thali.png' },
-            { name: 'Chicken Curry Meal', category: 'Non-Vegetarian', orders: 89, status: 'Available', img: 'assets/images/menu/butter-chicken-naan.png' },
+            { name: 'Chicken Curry Meal', category: 'Non-Vegetarian', orders: 89, status: 'Available', img: 'assets/images/menu/chicken-curry-meal.jpg' },
             { name: 'Paneer Tikka Combo', category: 'Vegetarian', orders: 156, status: 'Available', img: 'assets/images/menu/paneer-tikka-masala-roti.png' },
             { name: 'Diet Power Bowl', category: 'Diet Plan', orders: 45, status: 'Low Stock', img: 'assets/images/menu/diet-quinoa-power-bowl.png' }
         ];
