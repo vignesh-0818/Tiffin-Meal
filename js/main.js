@@ -10,7 +10,8 @@
 // Works across all pages
 
 function initTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const urlParams = new URLSearchParams(window.location.search);
+    const savedTheme = urlParams.get('theme') || localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
@@ -61,8 +62,8 @@ function toggleRTL() {
 
 function updateRTLIcon() {
     const isRTL = document.body.classList.contains('rtl');
-    document.querySelectorAll('.rtl-toggle-btn').forEach(btn => {
-        btn.innerHTML = isRTL ? '<i class="fas fa-align-left"></i>' : '<i class="fas fa-align-right"></i>';
+    document.querySelectorAll('.rtl-toggle-btn, .rtl-toggle, #rtl-toggle').forEach(btn => {
+        btn.textContent = 'RTL';
         btn.title = isRTL ? 'Switch to LTR' : 'Switch to RTL';
     });
 }
@@ -609,6 +610,9 @@ function initScrollAnimations() {
     }, { threshold: 0.1 });
     
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    if (new URLSearchParams(window.location.search).has('showall') || new URLSearchParams(window.location.search).has('focus')) {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
 }
 
 // ============================================
@@ -885,4 +889,19 @@ function handleInlineNewsletter(e) {
     form.newsletterTimeout = setTimeout(() => {
         msg.style.display = 'none';
     }, 5000);
+}
+
+function handleFocusQuery() {
+    const focusId = new URLSearchParams(window.location.search).get('focus');
+    if (focusId) {
+        const el = document.getElementById(focusId);
+        if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
+        document.querySelectorAll('.fade-in').forEach(elem => elem.classList.add('visible'));
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleFocusQuery);
+} else {
+    handleFocusQuery();
 }

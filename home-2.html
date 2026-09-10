@@ -44,7 +44,7 @@
 </ul>
 <div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
 <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL">RTL</button>
 <a class="btn nav-login-btn" href="customer-login.html">Login</a>
 <a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
 </div>
@@ -279,7 +279,7 @@
 </div>
 </section>
 <!-- ================= CUSTOMER TESTIMONIALS ================= -->
-<section class="section-padding">
+<section class="section-padding" id="testimonials-section">
 <div class="container">
 <div class="text-center mb-5 fade-in">
 <h2 class="section-title">Loved by Thousands</h2>
@@ -350,26 +350,26 @@
 </div>
 </section>
 <!-- ================= DELIVERY INFORMATION ================= -->
-<section class="section-padding" style="background:var(--bg-secondary);">
+<section class="section-padding" id="delivery-section" style="background:var(--bg-secondary);">
 <div class="container">
 <div class="row align-items-center g-5">
 <div class="col-lg-6 fade-in">
-<div style="background:var(--bg-primary);border-radius:16px;padding:2.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);">
+<div class="delivery-cities-card" style="background:var(--bg-primary);border-radius:16px;padding:2.5rem;box-shadow:var(--card-shadow);border:1px solid var(--border-color);">
 <div style="text-align:center;margin-bottom:1.5rem;">
 <i class="fas fa-map-marked-alt" style="font-size:3rem;color:var(--primary);margin-bottom:1rem;"></i>
 <h3>We Deliver Across Major Cities</h3>
 <p style="color:var(--text-secondary);">Currently serving in 10+ cities across India with plans to expand further.</p>
 </div>
 <div class="row g-3 text-center mb-3">
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Delhi NCR</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Mumbai</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Bangalore</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Chennai</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Hyderabad</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Pune</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Kolkata</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Ahmedabad</div></div>
-<div class="col-4"><div style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Jaipur</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Delhi NCR</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Mumbai</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Bangalore</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Chennai</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Hyderabad</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Pune</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Kolkata</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Ahmedabad</div></div>
+<div class="col-4"><div class="city-pill" style="background:var(--primary-light);border-radius:10px;padding:0.75rem;font-weight:600;color:var(--primary);font-size:0.9rem;">Jaipur</div></div>
 </div>
 <div class="text-center">
 <a class="btn btn-primary-custom w-100" href="delivery.html"><i class="fas fa-search-location me-2"></i>Check Your Area</a>

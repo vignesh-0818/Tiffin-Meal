@@ -405,6 +405,38 @@ body.rtl .home-dropdown .dropdown-menu {
     outline: none;
 }
 
+.rtl-toggle-btn,
+.rtl-toggle,
+#rtl-toggle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+body.dark-mode .rtl-toggle-btn,
+body.dark-mode .rtl-toggle,
+body.dark-mode #rtl-toggle,
+[data-theme="dark"] .rtl-toggle-btn,
+[data-theme="dark"] .rtl-toggle,
+[data-theme="dark"] #rtl-toggle {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .rtl-toggle-btn:hover,
+body.dark-mode .rtl-toggle:hover,
+body.dark-mode #rtl-toggle:hover,
+[data-theme="dark"] .rtl-toggle-btn:hover,
+[data-theme="dark"] .rtl-toggle:hover,
+[data-theme="dark"] #rtl-toggle:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
 .nav-login-btn {
     border: 2px solid var(--primary);
     color: var(--primary);
@@ -831,7 +863,7 @@ body.rtl .mobile-menu .mobile-dropdown {
 .plan-card.featured::before {
     content: 'Popular';
     position: absolute;
-    top: -12px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--primary);
@@ -841,11 +873,29 @@ body.rtl .mobile-menu .mobile-dropdown {
     font-size: 0.8rem;
     font-weight: 600;
     white-space: nowrap;
+    z-index: 5;
 }
 
-body.rtl .plan-card.featured::before {
-    left: 50%;
-    right: auto;
+/* Hide pseudo-element when badge is present in HTML (e.g. Best Value) */
+.plan-card.featured:has(.badge)::before {
+    display: none !important;
+}
+
+.plan-card.featured .badge {
+    position: absolute !important;
+    top: -14px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 5 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.rtl .plan-card.featured::before,
+body.rtl .plan-card.featured .badge {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(50%) !important;
 }
 
 .plan-card:hover {
@@ -932,6 +982,13 @@ body.rtl .plan-card.featured::before {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.8rem;
+    display: inline-block;
+    align-self: center;
+    text-align: center;
+    padding: 0.25rem 0.85rem;
+    border-radius: 20px;
+    background: var(--primary-light);
+    margin: 0 auto 0.5rem;
 }
 
 /* ============================================
@@ -977,17 +1034,18 @@ body.rtl .plan-card.featured::before {
 }
 
 .step-number {
-    width: 60px;
-    height: 60px;
+    width: 36px;
+    height: 36px;
     background: var(--primary);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1rem;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
     transition: background-color 0.3s ease;
 }
 
@@ -1001,18 +1059,23 @@ body.rtl .plan-card.featured::before {
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-color);
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .testimonial-card .stars {
     color: var(--accent) !important;
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .testimonial-card .testimonial-text {
     font-style: italic;
     color: var(--text-secondary);
-    margin: 1rem 0;
+    margin: 1rem 0 1.5rem;
     line-height: 1.7;
+    flex: 1 1 auto;
 }
 
 .testimonial-card .testimonial-author {
@@ -1025,6 +1088,12 @@ body.rtl .plan-card.featured::before {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;
+}
+
+.testimonial-card .d-flex {
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 /* ============================================
@@ -1508,23 +1577,32 @@ body.dark-mode .coverage-result.unavailable {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.85) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 40%, rgba(0, 0, 0, 0.92) 100%);
     padding: 1.5rem;
     color: #ffffff;
+    z-index: 2;
 }
 
-/* Enforce readability in Light Mode without breaking Dark Mode */
-body:not(.dark-mode) .meal-preview-card .meal-overlay h5,
-body:not(.dark-mode) .meal-preview-card .meal-overlay .meal-day {
+/* Enforce readability in Light Mode and Dark Mode */
+.meal-preview-card .meal-overlay h5,
+.meal-preview-card .meal-overlay .meal-day {
     color: #ffffff !important;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9);
 }
 
 .meal-preview-card .meal-day {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.85rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================
@@ -2154,8 +2232,13 @@ body.dark-mode .blog-filter-btn.active {
 }
 
 body.dark-mode .blog-category {
-    background: rgba(76, 175, 80, 0.15) !important;
-    color: var(--primary) !important;
+    background: rgba(76, 175, 80, 0.2) !important;
+    color: #4caf50 !important;
+    border: 1px solid rgba(76, 175, 80, 0.3) !important;
+    display: inline-block !important;
+    align-self: center !important;
+    text-align: center !important;
+    margin: 0 auto 0.5rem !important;
 }
 
 body.dark-mode .read-more {
@@ -2834,8 +2917,22 @@ body.menu-open-custom {
     }
     
     /* 3. Dark Mode RTL and Dark Mode button visibility */
+    body.dark-mode .offcanvas,
+    body.dark-mode .offcanvas-header,
+    body.dark-mode .offcanvas-body {
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+    }
+    body.dark-mode .offcanvas .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+    body.dark-mode .offcanvas-body .nav-link {
+        color: var(--text-primary) !important;
+    }
     [data-theme="dark"] .offcanvas-body .nav-actions .theme-toggle-btn,
-    [data-theme="dark"] .offcanvas-body .nav-actions .rtl-toggle-btn {
+    [data-theme="dark"] .offcanvas-body .nav-actions .rtl-toggle-btn,
+    body.dark-mode .offcanvas-body .nav-actions .theme-toggle-btn,
+    body.dark-mode .offcanvas-body .nav-actions .rtl-toggle-btn {
         color: #ffffff !important;
         border-color: rgba(255, 255, 255, 0.5) !important;
     }
@@ -2883,5 +2980,149 @@ body.menu-open-custom {
     }
     body.dark-mode .navbar-toggler {
         border-color: rgba(255, 255, 255, 0.5) !important;
+    }
+}
+
+
+/* ============================================
+   Delivery Information & Major Cities Styling
+   ============================================ */
+.delivery-cities-card {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.city-pill {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Dark Mode Contrast for Delivery Information & Major Cities */
+body.dark-mode .delivery-cities-card {
+    background: #1e1e1e !important;
+    border-color: #3d3d3d !important;
+}
+
+body.dark-mode .delivery-cities-card h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .delivery-cities-card p {
+    color: #b0b0b0 !important;
+}
+
+body.dark-mode .city-pill {
+    background: rgba(76, 175, 80, 0.2) !important;
+    color: #a5d6a7 !important;
+    border: 1px solid rgba(76, 175, 80, 0.4) !important;
+    font-weight: 600 !important;
+}
+
+body.dark-mode .choose-card {
+    background: #1e1e1e !important;
+    border-color: #3d3d3d !important;
+}
+
+body.dark-mode .choose-card h5 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .choose-card p {
+    color: #c0c0c0 !important;
+}
+
+body.dark-mode .choose-card strong {
+    color: #4caf50 !important;
+}
+
+body.dark-mode .choose-card .icon {
+    background: rgba(76, 175, 80, 0.2) !important;
+    color: #4caf50 !important;
+    border: 1px solid rgba(76, 175, 80, 0.3) !important;
+}
+
+/* ============================================
+   Pricing Page Billing Toggle Styling & Contrast
+   ============================================ */
+#billingToggle {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.billing-btn {
+    color: var(--text-secondary);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.billing-btn:hover:not(.active) {
+    color: var(--text-primary);
+}
+
+.billing-btn.active {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+body.dark-mode #billingToggle {
+    background: #252525 !important;
+    border-color: #444444 !important;
+}
+
+body.dark-mode .billing-btn {
+    color: #b0b0b0 !important;
+    background: transparent;
+}
+
+body.dark-mode .billing-btn:hover:not(.active) {
+    color: #ffffff !important;
+}
+
+body.dark-mode .billing-btn.active {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   360px & Mobile Responsiveness Fixes
+   ============================================ */
+@media (max-width: 576px) {
+    .delivery-cities-card {
+        padding: 1.25rem !important;
+    }
+    .delivery-cities-card .row.g-3 {
+        --bs-gutter-x: 0.5rem;
+        --bs-gutter-y: 0.5rem;
+    }
+    .city-pill {
+        padding: 0.6rem 0.25rem !important;
+        font-size: 0.82rem !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .delivery-cities-card {
+        padding: 1rem 0.75rem !important;
+    }
+    .delivery-cities-card .row.g-3 {
+        --bs-gutter-x: 0.35rem;
+        --bs-gutter-y: 0.4rem;
+    }
+    .delivery-cities-card h3 {
+        font-size: 1.25rem;
+    }
+    .delivery-cities-card p {
+        font-size: 0.85rem;
+    }
+    .city-pill {
+        padding: 0.5rem 0.15rem !important;
+        font-size: 0.75rem !important;
+        letter-spacing: -0.2px;
+        white-space: nowrap;
     }
 }

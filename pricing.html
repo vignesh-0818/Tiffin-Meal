@@ -42,7 +42,7 @@
 </ul>
 <div class="d-flex align-items-center gap-2 mt-4 mt-lg-0 nav-actions">
 <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL"><i class="fas fa-align-right"></i></button>
+<button class="rtl-toggle-btn" onclick="toggleRTL()" title="Toggle RTL">RTL</button>
 <a class="btn nav-login-btn" href="customer-login.html">Login</a>
 <a class="btn nav-signup-btn" href="customer-register.html">Sign Up</a>
 </div>
@@ -99,7 +99,7 @@
 <!-- Standard Plan -->
 <div class="col-lg-4 col-md-6 fade-in">
 <div class="card plan-card featured h-100 text-center p-4 position-relative">
-<span class="badge position-absolute" style="top:-12px;left:50%;transform:translateX(-50%);background:var(--accent,#ff6b35);color:#fff;padding:0.4rem 1.2rem;border-radius:20px;font-size:0.8rem;">Best Value</span>
+<span class="badge position-absolute" style="top:-14px;left:50%;transform:translateX(-50%);background:var(--accent,#ff6b35);color:#fff;padding:0.4rem 1.4rem;border-radius:20px;font-size:0.8rem;font-weight:600;z-index:5;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.15);">Best Value</span>
 <div class="mb-3">
 <i class="fas fa-fire fa-3x" style="color:var(--accent,#ff6b35);"></i>
 </div>
@@ -426,6 +426,8 @@
       window.location.href = 'customer-login.html?returnUrl=' + encodeURIComponent('contact.html');
     }
   }
+  const urlBilling = new URLSearchParams(window.location.search).get('billing');
+  if (urlBilling === 'weekly') switchBilling('weekly');
 </script>
 </body>
 </html>
