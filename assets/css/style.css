@@ -358,6 +358,45 @@ figure { margin: 0; }
 
 /* navbar actions */
 .nav-actions { display: flex; align-items: center; gap: 0.55rem; }
+.nav-dashboard-btn,
+.nav-login-btn {
+  border: 2px solid var(--sp-primary, #28a745);
+  color: var(--sp-primary, #28a745);
+  border-radius: 25px;
+  padding: 0.4rem 1.2rem;
+  font-weight: 600;
+  background: transparent;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-dashboard-btn:hover,
+.nav-login-btn:hover {
+  background: var(--sp-primary, #28a745);
+  color: #ffffff;
+}
+.nav-signup-btn {
+  background: var(--sp-primary, #28a745);
+  color: #ffffff;
+  border-radius: 25px;
+  padding: 0.4rem 1.2rem;
+  font-weight: 600;
+  border: 2px solid var(--sp-primary, #28a745);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-signup-btn:hover {
+  background: var(--sp-primary-600, #218838);
+  border-color: var(--sp-primary-600, #218838);
+  color: #ffffff;
+}
 .nav-toggle {
   width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border);
   background: var(--bg-white); color: var(--text-primary);

@@ -437,6 +437,7 @@ body.dark-mode #rtl-toggle:hover,
     border-color: var(--primary);
 }
 
+.nav-dashboard-btn,
 .nav-login-btn {
     border: 2px solid var(--primary);
     color: var(--primary);
@@ -444,9 +445,15 @@ body.dark-mode #rtl-toggle:hover,
     padding: 0.4rem 1.2rem;
     font-weight: 600;
     background: transparent;
+    white-space: nowrap;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.nav-dashboard-btn:hover,
 .nav-login-btn:hover {
     background: var(--primary);
     color: #ffffff;
@@ -2904,6 +2911,9 @@ body.menu-open-custom {
     /* 1. Fix mobile menu buttons cut-off */
     .offcanvas-body .nav-actions .btn {
         flex: 1 1 45% !important;
+    }
+    .offcanvas-body .nav-actions .nav-dashboard-btn {
+        flex: 1 1 100% !important;
     }
     
     /* 2. Mobile navbar active green color */

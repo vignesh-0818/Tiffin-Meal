@@ -711,15 +711,7 @@ function checkPublicAuth() {
         const userStr = localStorage.getItem('tiffin_current_user');
         if (userStr) {
             const user = JSON.parse(userStr);
-            const loginBtns = document.querySelectorAll('.nav-login-btn');
             const signupBtns = document.querySelectorAll('.nav-signup-btn');
-            
-            loginBtns.forEach(btn => {
-                btn.textContent = 'Dashboard';
-                btn.href = user.role === 'admin' ? 'admin-dashboard.html' : 'customer-dashboard.html';
-                btn.classList.add('btn-primary-custom');
-                btn.classList.remove('btn-outline-custom');
-            });
             
             signupBtns.forEach(btn => {
                 btn.textContent = 'Logout';
