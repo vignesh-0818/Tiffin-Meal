@@ -37,36 +37,93 @@ function updateThemeIcon() {
 // RTL MANAGEMENT
 // ============================================
 // Toggle RTL mode
-// Stores preference in localStorage as 'direction'
+// Stores preference in localStorage as 'direction' (and 'learnsphere-dir' for compatibility)
 // Adds/removes 'rtl' class on body
-// Sets document direction
+// Sets document direction and language attributes
+// Updates button text to reflect the NEXT action (LTR mode -> "RTL", RTL mode -> "LTR")
+
+(function earlyDirInit() {
+    try {
+        const savedDir = localStorage.getItem('direction') || localStorage.getItem('learnsphere-dir') || 'ltr';
+        if (savedDir === 'rtl') {
+            document.documentElement.setAttribute('dir', 'rtl');
+            document.documentElement.setAttribute('lang', 'ar');
+            if (document.body) document.body.classList.add('rtl');
+        } else {
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            if (document.body) document.body.classList.remove('rtl');
+        }
+    } catch (e) {}
+})();
 
 function initRTL() {
-    const savedDir = localStorage.getItem('direction') || 'ltr';
-    if (savedDir === 'rtl') {
+    const savedDir = localStorage.getItem('direction') || localStorage.getItem('learnsphere-dir') || 'ltr';
+    const isRTL = savedDir === 'rtl';
+    if (isRTL) {
         document.body.classList.add('rtl');
         document.documentElement.setAttribute('dir', 'rtl');
         document.documentElement.setAttribute('lang', 'ar');
+    } else {
+        document.body.classList.remove('rtl');
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', 'en');
     }
     updateRTLIcon();
 }
 
 function toggleRTL() {
-    document.body.classList.toggle('rtl');
-    const isRTL = document.body.classList.contains('rtl');
-    document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
-    document.documentElement.setAttribute('lang', isRTL ? 'ar' : 'en');
-    localStorage.setItem('direction', isRTL ? 'rtl' : 'ltr');
+    const currentDir = document.documentElement.getAttribute('dir') || (document.body.classList.contains('rtl') ? 'rtl' : 'ltr');
+    const isRTL = currentDir !== 'rtl'; // if currently ltr, switch to rtl
+    if (isRTL) {
+        document.body.classList.add('rtl');
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', 'ar');
+    } else {
+        document.body.classList.remove('rtl');
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', 'en');
+    }
+    const newDir = isRTL ? 'rtl' : 'ltr';
+    try { localStorage.setItem('direction', newDir); } catch (e) {}
+    try { localStorage.setItem('learnsphere-dir', newDir); } catch (e) {}
     updateRTLIcon();
 }
 
 function updateRTLIcon() {
-    const isRTL = document.body.classList.contains('rtl');
-    document.querySelectorAll('.rtl-toggle-btn, .rtl-toggle, #rtl-toggle').forEach(btn => {
-        btn.textContent = 'RTL';
-        btn.title = isRTL ? 'Switch to LTR' : 'Switch to RTL';
+    const isRTL = (document.documentElement.getAttribute('dir') === 'rtl') || (document.body && document.body.classList.contains('rtl'));
+    const nextAction = isRTL ? 'LTR' : 'RTL';
+    const nextTitle = isRTL ? 'Switch to LTR' : 'Switch to RTL';
+
+    document.querySelectorAll('.rtl-toggle-btn, .rtl-toggle, #rtl-toggle, [onclick*="toggleRTL"], [data-dir-toggle]').forEach(btn => {
+        const ltrIcon = btn.querySelector('[data-icon-ltr]');
+        const rtlIcon = btn.querySelector('[data-icon-rtl]');
+        if (ltrIcon || rtlIcon) {
+            if (ltrIcon) ltrIcon.style.display = isRTL ? 'none' : 'inline-block';
+            if (rtlIcon) rtlIcon.style.display = isRTL ? 'inline-block' : 'none';
+        } else {
+            btn.textContent = nextAction;
+        }
+        btn.setAttribute('title', nextTitle);
+        btn.setAttribute('aria-label', nextTitle);
     });
+
+    const rtlCb = document.getElementById('rtl-toggle-cb');
+    if (rtlCb) {
+        rtlCb.checked = isRTL;
+    }
 }
+
+window.initRTL = initRTL;
+window.toggleRTL = toggleRTL;
+window.updateRTLIcon = updateRTLIcon;
+
+// Keep direction in sync across browser tabs
+window.addEventListener('storage', function(e) {
+    if (e.key === 'direction' || e.key === 'learnsphere-dir') {
+        initRTL();
+    }
+});
 
 // ============================================
 // MOBILE NAVIGATION
