@@ -3136,3 +3136,35 @@ body.dark-mode .billing-btn.active {
         white-space: nowrap;
     }
 }
+
+/* ============================================
+   Auth Success Messages (Login & Sign Up)
+   ============================================ */
+.auth-success-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    border-radius: 10px;
+    padding: 0.85rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 12px rgba(15, 81, 50, 0.08);
+    animation: authFadeIn 0.25s ease-in-out;
+}
+
+body.dark-mode .auth-success-message {
+    background-color: #0f3d26;
+    color: #75b798;
+    border-color: #144e32;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes authFadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}

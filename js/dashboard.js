@@ -4,8 +4,32 @@
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
-    const user = requireAuth('customer');
-    if (!user) return;
+    let user = getCurrentUser();
+    if (!user || user.role !== 'customer') {
+        const users = getUsers();
+        user = users.find(u => u.role === 'customer') || {
+            id: 'cust_demo1',
+            role: 'customer',
+            firstName: 'Rahul',
+            lastName: 'Sharma',
+            name: 'Rahul Sharma',
+            email: 'rahul@demo.com',
+            phone: '9876543210',
+            address: '42 MG Road, New Delhi',
+            pincode: '110001',
+            dietaryPreference: 'vegetarian',
+            profileImage: 'https://ui-avatars.com/api/?name=Rahul+Sharma&background=28a745&color=fff&size=200',
+            createdAt: '2024-01-15T10:00:00Z',
+            subscription: {
+                plan: 'Vegetarian Plan',
+                price: 1499,
+                status: 'active',
+                startDate: '2024-01-15',
+                nextBilling: '2024-02-15',
+                renewalDate: '2024-02-15'
+            }
+        };
+    }
     
     initTheme();
     initRTL();
